@@ -1,0 +1,161 @@
+{
+  "interestQuestion": [
+    "We are doing this study to learn about the relationships between behavior, brain structure and chemistry, and brain function associated with Intimate Partner Violence (IPV) with a non-invasive imaging method called magnetic resonance spectroscopy or MRS.",
+    "If you are interested in taking part in this study, would you be willing to answer questions about your health and medical history to find out if you might qualify for the study? Some of the questions may make you feel uncomfortable. You can stop at any time. I answers to this survey will be recorded but detailed contact information will only be collected if you qualify for the study and want to schedule an in person visit."
+  ],
+  "questions": [
+    {
+      "id": "question-age",
+      "inputType": "radio",
+      "question": "Are you between ages 18 to 45?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-age",
+      "inputType": "select",
+      "question": "What is your biological sex?",
+      "options": [
+        "Male",
+        "Female",
+        "Other"
+      ]
+    },
+    {
+      "id": "question-diagnosis",
+      "inputType": "radio",
+      "question": "Do you have a medical diagnosis of any neurological disorder (epilepsy, Parkinson’s Disease, brain tumor, etc)?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": 3,
+      "inputType": "question-steroids",
+      "question": "Have you used steroids or barbiturates?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-meth",
+      "inputType": "radio",
+      "question": "Have you used methamphetamine?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-psych",
+      "inputType": "radio",
+      "question": "Have you used psychoactive drugs?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "quesiton-impairment",
+      "inputType": "radio",
+      "question": "Do you have hearing, vision, or upper body motor impairments?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-bipolar",
+      "inputType": "radio",
+      "question": "Have you been diagnosed with Bipolar Disorder or Schizophrenia?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-left",
+      "inputType": "radio",
+      "question": "Are you left-handed?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-unsafe",
+      "inputType": "radio",
+      "question": "Are you currently in a intimate relationship (boyfriend, girlfriend, spouse) in which you don’t feel safe?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-implants",
+      "inputType": "radio",
+      "question": "Do you have any electrically, magnetically, or mechanically activated implants such as cardiac pacemakers (a device inserted in the chest to regulate the heartbeat) or any ferromagnetic implants (aneurysm clips, surgical clips, prostheses, metal fragment, etc)?  ",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-claustro",
+      "inputType": "radio",
+      "question": "Are you Claustrophobic (afraid of being in small spaces)?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "question-pregnant",
+      "inputType": "radio",
+      "question": "(If female), are you currently pregnant?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "conditions": [
+        {
+          "id": "question-sex",
+          "response": "Yes"
+        }
+      ]
+    }
+  ],
+  "passRequirements": [
+    {
+      "id": "question-implants",
+      "response": "No"
+    },
+    {
+      "id": "question-claustro",
+      "response": "No"
+    },
+    {
+      "id": "question-pregnant",
+      "response": "No"
+    }
+  ],
+  "participateQuestion": [
+    "This study is divided into three parts. The first part includes an informed consent interview and a detailed screening. The second part of this study is Neurocognitive assessment. The third part is MRI scan. Total time will be about 3 hours.",
+    "During the informed consent interview, you will be given opportunity for questions or concerns with the study principal investigator and/ or study coordinator. A detailed clinical screening will also be given and you will be asked to complete screening forms.",
+    "For the neurocognitive assessment, the participant will first complete the computer-assisted test. Once finished, the examiner will set the laptop computer aside and administer the other neurocognitive tests. You will be allowed short breaks to stretch, use the restroom, or get a drink of water, if needed.",
+    "For the MRI scan part, pictures of the chemicals working in your brain will be taken using a Magnetic Resonance Spectroscopy (MRS) scan. Before we do this procedure, we will ask you to remove any metal from you and your clothing such as jewelry, keys etc.  We will give you earplugs to wear to protect your hearing during scanning – the MRI machine makes loud noises.  You will be asked to lie still in the MRI scanner with your head positioned comfortably on a pillow for the duration of the scan.  You will be able to talk to the study staff through a two way intercom at all times during the scan. If you are feeling uncomfortable, you can tell the study staff. The study staff will also ask you how you are doing.  Taking part in this research study is your choice.  You do not have to take part in this study to get your usual medical care.",
+    {
+      "id": "question-participate",
+      "inputType": "radio",
+      "question": "Would you like to participate in this study?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  ]
+}
