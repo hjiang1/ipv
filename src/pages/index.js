@@ -84,7 +84,7 @@ function IndexPage() {
   return (
     <Fragment>
       <SEO title={showOverlay ? altTitle : title} />
-      <IdleTimer timeout={10 * 1000} onIdle={onIdle} />
+      <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <Container>
         <Header siteTitle={showOverlay ? altTitle : title} />
         <main className="content">

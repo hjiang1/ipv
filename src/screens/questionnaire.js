@@ -42,20 +42,19 @@ function Questionnaire(props) {
 
   useEffect(() => {
     if (
-      // age !== undefined
-      // && sex !== undefined
-      // && diagnosis !== undefined
-      // && steroids !== undefined
-      // && methamphetamine !== undefined
-      // && psych !== undefined
-      // && impairment !== undefined
-      // && bipolar !== undefined
-      // && left !== undefined
-      // && unsafe !== undefined
-      // && implants !== undefined
-      // && claustro !== undefined
-      // && (!showPregnant || pregnant !== undefined)
-      claustro !== undefined
+      age !== undefined
+      && sex !== undefined
+      && diagnosis !== undefined
+      && steroids !== undefined
+      && methamphetamine !== undefined
+      && psych !== undefined
+      && impairment !== undefined
+      && bipolar !== undefined
+      && left !== undefined
+      && unsafe !== undefined
+      && implants !== undefined
+      && claustro !== undefined
+      && (!showPregnant || pregnant !== undefined)
     ) {
       setIsCompleted(true)
     } else if (isCompleted) {
