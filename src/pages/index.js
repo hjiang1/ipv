@@ -20,7 +20,7 @@ const Container = styled.div`
       border-radius: 5px;
       border: 1px solid white;
       background-color: lightgray;
-      padding: 0.3rem 0.9rem;
+      padding: 0.5rem 1rem;
       font-weight: bold;
       transition-property: color, background-color, border;
       transition-duration: 0.2s;
