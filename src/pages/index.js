@@ -26,10 +26,12 @@ const Container = styled.div`
       transition-duration: 0.2s;
       transition-timing-function: ease;
 
-      :hover {
-        color: maroon;
-        border: 1px solid maroon;
-        cursor: pointer;
+      @media (hover: hover) { 
+        :hover {
+          color: maroon;
+          border: 1px solid maroon;
+          cursor: pointer;
+        }
       }
       
       :focus {
@@ -48,10 +50,12 @@ const Container = styled.div`
       background-color: maroon;
       color: white;
 
-      :hover {
-        background-color: white;
-        border: 1px solid maroon;
-        color: maroon;
+      @media (hover: hover) { 
+        :hover {
+          background-color: white;
+          border: 1px solid maroon;
+          color: maroon;
+        }
       }
     }
 
