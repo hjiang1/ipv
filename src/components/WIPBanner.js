@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FaTools, FaTimes } from 'react-icons/fa';
 
 const Container = styled.div`
-  background-color: red;
+  background-color: yellow;
   border: 2px solid black;
 
   .content {
@@ -17,6 +17,7 @@ const Container = styled.div`
     align-items: center;
     font-size: 0.8rem;
     line-height: 1.5;
+    font-weight: bold;
   }
 
   .message {
