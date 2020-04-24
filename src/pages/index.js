@@ -94,7 +94,7 @@ function IndexPage() {
       <SEO title={showOverlay ? altTitle : title} />
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <Container>
-        <Header siteTitle={showOverlay ? altTitle : title} />
+        <Header logo={showOverlay ? 'pizza' : 'bwh'} />
         <main className="content">
           { showOverlay
             ? <Overlay setShowOverlay={setShowOverlay} />
