@@ -23,6 +23,7 @@ const Container = styled.div`
       font-weight: bold;
       margin: 0 1rem 0 0;
       flex-shrink: 0;
+      cursor: default;
     }
 
     .prompt {
