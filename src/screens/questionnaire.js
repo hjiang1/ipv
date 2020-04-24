@@ -14,6 +14,13 @@ const Container = styled.div`
 
   .questionnaire-form {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      width: fit-content;
+      align-self: flex-end;
+    }
   }
 `
 

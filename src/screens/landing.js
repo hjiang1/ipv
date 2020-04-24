@@ -4,10 +4,18 @@ import styled from "styled-components"
 import HideRender from "../components/HideRender"
 
 const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+
   .landing-title {
     font-size: 1.5rem;
     line-height: 1.5;
     font-weight: bold;
+  }
+
+  .button {
+    width: fit-content;
+    align-self: flex-end;
   }
 `
 

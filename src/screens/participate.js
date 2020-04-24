@@ -44,6 +44,15 @@ const Container = styled.div`
       margin-top: 0.5rem;
       color: red;
     }
+
+    .form-divider {
+      width: 100%
+    }
+
+    .button {
+      width: fit-content;
+      align-self: flex-end;
+    }
   }
 `
 
@@ -96,6 +105,7 @@ function Participate(props) {
             {validate && email === "" && <p className="validation">Please enter an email.</p>}
             <input className={classNames("email-input", {error: validate && email === ""})} type="email" id="email" name="email" value={email} onChange={event => setEmail(event.target.value)} />
           </Fragment>}
+          <hr className="form-divider" />
           <input className={classNames("button", {disabled: !isCompleted})} type="submit" value="Finish" />
         </form>
       </Container>
