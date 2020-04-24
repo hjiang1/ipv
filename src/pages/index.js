@@ -37,7 +37,7 @@ const Container = styled.div`
     transition-timing-function: ease;
 
     /* margin to make button-press easier on mobile, can remove once footer is added */
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     @media (hover: hover) { 
       :hover {
