@@ -6,6 +6,12 @@ import BinaryQuestion from "../components/BinaryQuestion"
 import HideRender from "../components/HideRender"
 
 const Container = styled.div`
+  .qualify-banner {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  
   .consent-form {
     display: flex;
     flex-direction: column;
@@ -17,14 +23,14 @@ const Container = styled.div`
     }
 
     .email-label {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .email-input {
-      border: 1px solid lightgrey;
+      border: 1px solid gray;
       border-radius: 5px;
       width: 30rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       padding: 0.3rem 0.9rem;
 
       &.error {
@@ -34,6 +40,7 @@ const Container = styled.div`
 
     .validation {
       margin-left: 0;
+      margin-top: 0.5rem;
       color: red;
     }
   }
@@ -74,6 +81,7 @@ function Participate(props) {
   return (
     <HideRender hide={showOverlay}>
       <Container>
+        <p className="qualify-banner">You qualify to participate in the study based on your answers to the questionnaire.</p>
         <p>This study is divided into three parts. The first part includes an informed consent interview and a detailed screening. The second part of this study is Neurocognitive assessment. The third part is MRI scan. Total time will be about 3 hours.</p>
         <p>During the informed consent interview, you will be given opportunity for questions or concerns with the study principal investigator and/ or study coordinator. A detailed clinical screening will also be given and you will be asked to complete screening forms.</p>
         <p>For the neurocognitive assessment, the participant will first complete the computer-assisted test. Once finished, the examiner will set the laptop computer aside and administer the other neurocognitive tests. You will be allowed short breaks to stretch, use the restroom, or get a drink of water, if needed.</p>

@@ -28,6 +28,7 @@ function Questionnaire(props) {
 
   const [showPregnant, setShowPregnant] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
+  const [participantQualifies, setParticipantQualifies] = useState(false)
   const [validate, setValidate] = useState(false)
 
   const {showOverlay, setQualify, setScreen} = props
@@ -39,6 +40,16 @@ function Questionnaire(props) {
       setShowPregnant(false)
     }
   }, [sex])
+
+  useEffect(() => {
+    if (
+      age === 'Yes'
+      && implants === 'No'
+      && claustro === 'No'
+    ) {
+      setParticipantQualifies(true)
+    }
+  }, [age, implants, claustro])
 
   useEffect(() => {
     if (
@@ -62,10 +73,6 @@ function Questionnaire(props) {
     }
   }, [age, sex, diagnosis, steroids, methamphetamine, psych, impairment, bipolar, left, unsafe, implants, claustro, showPregnant, pregnant, isCompleted])
 
-  const participantQualifies = () => {
-    return claustro === 'No'
-  }
-
   const onSubmit = event => {
     event.preventDefault();
 
@@ -86,7 +93,7 @@ function Questionnaire(props) {
         pregnant
       })
     
-      if (participantQualifies()) {
+      if (participantQualifies) {
         // Send survey info
   
         setQualify(true)

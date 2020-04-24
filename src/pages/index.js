@@ -18,32 +18,40 @@ const Container = styled.div`
 
     .button {
       border-radius: 5px;
-      border: 1px solid black;
-      background-color: rgba(128, 0, 0, 0.15);
+      border: 1px solid white;
+      background-color: lightgray;
       padding: 0.3rem 0.9rem;
-      margin-top: 1rem;
       font-weight: bold;
-
-      &.hide-button {
-        border-radius: 5px;
-        border-width: 2px;
-        position: fixed;
-        right: 4vw;
-        top: 0;
-        font-size: 60px;
-        height: 60px;
-        color: maroon;
-        background-color: white;
-      }
+      transition: background-color 0.2s ease;
+      transition: color 0.2s ease;
+      transition: border 0.2s ease;
 
       :hover {
-        background-color: maroon;
-        color: white;
+        color: maroon;
+        border: 1px solid maroon;
         cursor: pointer;
       }
       
       :focus {
         outline: 0;
+      }
+    }
+
+    .hide-button {
+      border-radius: 5px;
+      border: 1px solid white;
+      position: fixed;
+      right: 4vw;
+      top: 1rem;
+      font-size: 40px;
+      height: 60px;
+      background-color: maroon;
+      color: white;
+
+      :hover {
+        background-color: white;
+        border: 1px solid maroon;
+        color: maroon;
       }
     }
 

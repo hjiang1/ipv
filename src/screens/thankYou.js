@@ -5,18 +5,25 @@ import HideRender from "../components/HideRender"
 
 const Container = styled.div`
   .thank-you {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 1.5;
     font-weight: bold;
   }
   .resources {
     border: 1px solid lightgrey;
     border-radius: 5px;
-    padding: 2rem;
     margin-top: 2rem;
 
+    @media only screen and (max-width: 600px) {
+      padding: 1rem;
+    }
+
+    @media only screen and (min-width: 600px) {
+      padding: 2rem;
+    }
+
     .resource {
-      margin: 1rem;
+      margin: 1rem 0;
 
       .resource-name {
         font-weight: bold;
