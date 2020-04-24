@@ -36,7 +36,6 @@ const Container = styled.div`
     transition-property: color, background-color, border;
     transition-duration: 0.2s;
     transition-timing-function: ease;
-
     /* margin to make button-press easier on mobile, can remove once footer is added */
     margin-bottom: 2rem;
 
@@ -160,8 +159,7 @@ function IndexPage() {
             setShowOverlay={setShowOverlay}
           />
         </main>
-        <footer>
-        </footer>
+        <footer></footer>
       </Container>
     </Fragment>
   )

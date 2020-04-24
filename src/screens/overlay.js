@@ -41,7 +41,7 @@ function Overlay(props) {
 
   return (
     <Container>
-      <p className="message">NOTHING TO SEE HERE, MOVE ALONG</p>
+      <p className="message">DISGUISED PAGE WILL GO HERE</p>
       <Img className="pizza-image" fluid={pizzaImage.placeholderImage.childImageSharp.fluid} />
       <button className="button" onClick={() => setShowOverlay(false)}>Return to Questionnaire</button>
     </Container>
