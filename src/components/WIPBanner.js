@@ -48,6 +48,7 @@ const Container = styled.div`
       color: white;
       background-color: black;
       box-shadow: 0px 0px 0px 1px white inset;
+      cursor: pointer;
     }
   }
 `
