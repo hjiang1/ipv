@@ -94,7 +94,7 @@ function BinaryQuestion(props) {
       {isInvalid && <p className="validation">Please select an option.</p>}
       {options.map((option, i) => <Fragment key={i}>
         <input className="radio" type="radio" name={`q-${id}`} id={`q-${id}-${option}`} checked={value === option} onChange={() => setValue(option)} />
-        <label className={classNames('label', {selected: value === option, error: isInvalid})} htmlFor={`q-${id}-${option}`}>{option}</label>
+        <label className={classNames('label', {selected: value === option, error: isInvalid})} onTouchStart={() => setValue(option)} htmlFor={`q-${id}-${option}`}>{option}</label>
       </Fragment>)}
     </Container>
   )
