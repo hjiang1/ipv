@@ -13,6 +13,7 @@ const Container = styled.div`
     border: 1px solid lightgrey;
     border-radius: 5px;
     margin-top: 2rem;
+    box-shadow: 5px 5px lightgray;
 
     @media only screen and (max-width: 600px) {
       padding: 1rem;
