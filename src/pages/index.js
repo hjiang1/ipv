@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
+import { FaTimes } from 'react-icons/fa';
 
 import Header from "../components/header"
 import Screen from "../screens"
@@ -53,6 +54,9 @@ const Container = styled.div`
   }
 
   .hide-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     border-radius: 5px;
     border: 1px solid white;
@@ -63,13 +67,10 @@ const Container = styled.div`
     height: 3.25rem;
     background-color: maroon;
     color: white;
-
     width: fit-content;
     align-self: flex-end;
-
     margin-top: 1.25rem;
     margin-bottom: -4.5rem;
-
     text-decoration: none;
 
     @media (hover: hover) { 
@@ -77,6 +78,19 @@ const Container = styled.div`
         background-color: white;
         border: 1px solid maroon;
         color: maroon;
+      }
+    }
+
+    .times-icon {
+      margin: -0.3rem;
+      @media only screen and (min-width: 601px) {
+        margin-right: 0.25rem;
+      }
+    }
+
+    .hide-text {
+      @media only screen and (max-width: 600px) {
+        display: none;
       }
     }
   }
@@ -128,7 +142,10 @@ function IndexPage() {
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <WIPBanner />
       <Container>
-        {!showOverlay && <button className="button hide-button" id="hide" onClick={() => setShowOverlay(true)}>HIDE</button> }
+        {!showOverlay && <button className="button hide-button" id="hide" onClick={() => setShowOverlay(true)}>
+          <FaTimes className="times-icon" />
+          <div className="hide-text">HIDE</div>
+        </button> }
         <Header logo={showOverlay ? 'pizza' : 'bwh'} />
         <main className="content">
           {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}

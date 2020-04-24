@@ -63,7 +63,7 @@ const WIPBanner = () => {
             <FaWrench className="wrench-icon" size="2rem" />
             <div>
               <div>This site is currently a work in progress.</div>
-              <div>Please contact Sam Jiang at <a href="mailto:hjiang4@partners.org" target="_blank">hjiang4@partners.org</a> to provide feedback on the design of this site.</div>
+              <div>Please contact Sam Jiang at <a href="mailto:hjiang4@partners.org" target="_blank" rel="noopener noreferrer">hjiang4@partners.org</a> to provide feedback on the design of this site.</div>
             </div>
           </div>
           <FaRegTimesCircle className="close-icon" size="2rem" onClick={() => setOpen(false)} />
