@@ -38,10 +38,8 @@ const Container = styled.div`
     margin-left: 1rem;
     color: black;
     padding: 0.2rem;
-    transition: color 0.2s ease;
 
     :hover {
-      color: white;
       cursor: pointer;
     }
   }
