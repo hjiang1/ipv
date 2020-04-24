@@ -89,12 +89,24 @@ function IndexPage() {
 
   const {title, altTitle} = data.site.siteMetadata
 
+  // Change title on switch tab and show overlay on tab back
+  useEffect(() => {
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden){
+        document.title = altTitle
+      } else {
+        // Changing tabs unmounts current tab so state has to be changed when user returns
+        setShowOverlay(true)
+      }
+    })
+  })
+
   return (
     <Fragment>
       <SEO title={showOverlay ? altTitle : title} />
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <Container>
-        <Header siteTitle={showOverlay ? altTitle : title} />
+        <Header logo={showOverlay ? 'pizza' : 'bwh'} />
         <main className="content">
           { showOverlay
             ? <Overlay setShowOverlay={setShowOverlay} />
