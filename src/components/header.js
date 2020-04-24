@@ -2,6 +2,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
+import logo from "../images/bwh.png"
+
 const HeaderContainer = styled.header`
   background: maroon;
   margin-bottom: 1.45rem;
@@ -9,22 +11,19 @@ const HeaderContainer = styled.header`
   .header-banner {
     margin: 0 auto;
     max-width: 960px;
-    padding: 1.45rem 1.0875rem;
+    padding: 0 1.0875rem;
   }
 
-  .header-title {
-    color: white;
-    margin: 0;
-    cursor: default;
+  .header-logo {
+    height: 3.5rem;
+    margin: 1rem 0;
   }
 `
 
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <div className="header-banner">
-      <h1 className="header-title">
-        {siteTitle}
-      </h1>
+      <img className="header-logo" src={logo} alt="Logo" />
     </div>
   </HeaderContainer>
 )

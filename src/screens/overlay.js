@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 const Container = styled.div`
   .message{
-    font-size: 50px;
+    font-size: 2.5rem;
     line-height: 1.2;
     color: maroon;
   }
