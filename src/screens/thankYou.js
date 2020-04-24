@@ -9,6 +9,7 @@ const Container = styled.div`
     line-height: 1.5;
     font-weight: bold;
   }
+
   .resources {
     border: 1px solid lightgrey;
     border-radius: 5px;
@@ -31,6 +32,18 @@ const Container = styled.div`
       }
     }
   }
+
+  .wide-link {
+    @media only screen and (max-width: 359px) {
+      display: none;
+    }
+  }
+
+  .narrow-link {
+    @media only screen and (min-width: 360px) {
+      display: none;
+    }
+  }
 `
 
 function ThankYou(props) {
@@ -47,15 +60,18 @@ function ThankYou(props) {
           <p>If you are a victim of IPV, you can use the resources below to seek help.</p>
           <div className="resource">
             <div className="resource-name">National Coalition Against Domestic Violence (NCADV)</div>
-            <a href="https://ncadv.org/" target="_blank" rel="noopener noreferrer">https://ncadv.org/</a>
+            <a className="wide-link" href="https://ncadv.org/" target="_blank" rel="noopener noreferrer">https://ncadv.org/</a>
+            <a className="narrow-link" href="https://ncadv.org/" target="_blank" rel="noopener noreferrer">Website</a>
           </div>
           <div className="resource">
             <div className="resource-name">The National Domestic Violence Hotline</div>
-            <a href="https://www.thehotline.org/help/" target="_blank" rel="noopener noreferrer">https://www.thehotline.org/help/</a>
+            <a className="wide-link" href="https://www.thehotline.org/help/" target="_blank" rel="noopener noreferrer">https://www.thehotline.org/help/</a>
+            <a className="narrow-link" href="https://www.thehotline.org/help/" target="_blank" rel="noopener noreferrer">Website</a>
           </div>
           <div className="resource">
             <div className="resource-name">The National Dating Abuse Hotline</div>
-            <a href="http://www.loveisrespect.org/" target="_blank" rel="noopener noreferrer">http://www.loveisrespect.org/</a>
+            <a className="wide-link" href="http://www.loveisrespect.org/" target="_blank" rel="noopener noreferrer">http://www.loveisrespect.org/</a>
+            <a className="narrow-link" href="http://www.loveisrespect.org/" target="_blank" rel="noopener noreferrer">Website</a>
           </div>
         </div>
       </Container>
