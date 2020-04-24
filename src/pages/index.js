@@ -22,9 +22,9 @@ const Container = styled.div`
       background-color: lightgray;
       padding: 0.3rem 0.9rem;
       font-weight: bold;
-      transition: background-color 0.2s ease;
-      transition: color 0.2s ease;
-      transition: border 0.2s ease;
+      transition-property: color, background-color, border;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
 
       :hover {
         color: maroon;

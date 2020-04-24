@@ -45,10 +45,9 @@ const Container = styled.div`
     border-radius: 5px;
     border: 1px solid gray;
     width: 10rem;
-
-    transition: background-color 0.2s ease;
-    transition: color 0.2s ease;
-    transition: border 0.2s ease;
+    transition-property: color, background-color, border;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
 
     :hover,
     &.selected
