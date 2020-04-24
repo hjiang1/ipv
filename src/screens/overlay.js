@@ -5,6 +5,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
   .message{
     font-size: 2.5rem;
     line-height: 1.2;
@@ -13,6 +16,11 @@ const Container = styled.div`
 
   .pizza-image {
     margin-bottom: 2rem;
+  }
+
+  .button {
+    width: fit-content;
+    align-self: center;
   }
 `
 
