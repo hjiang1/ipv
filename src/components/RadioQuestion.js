@@ -50,11 +50,13 @@ const Container = styled.div`
     transition-duration: 0.2s;
     transition-timing-function: ease;
 
-    :hover {
-      border-color: maroon;
-      color: maroon;
-      cursor: pointer;
-      font-weight: bold;
+    @media (hover: hover) { 
+      :hover {
+        border-color: maroon;
+        color: maroon;
+        cursor: pointer;
+        font-weight: bold;
+      }
     }
 
     &.selected
