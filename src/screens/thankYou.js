@@ -47,15 +47,15 @@ function ThankYou(props) {
           <p>If you are a victim of IPV, you can use the resources below to seek help.</p>
           <div className="resource">
             <div className="resource-name">National Coalition Against Domestic Violence (NCADV)</div>
-            <a href="https://ncadv.org/">https://ncadv.org/</a>
+            <a href="https://ncadv.org/" target="_blank">https://ncadv.org/</a>
           </div>
           <div className="resource">
             <div className="resource-name">The National Domestic Violence Hotline</div>
-            <a href="https://www.thehotline.org/help/">https://www.thehotline.org/help/</a>
+            <a href="https://www.thehotline.org/help/" target="_blank">https://www.thehotline.org/help/</a>
           </div>
           <div className="resource">
             <div className="resource-name">The National Dating Abuse Hotline</div>
-            <a href="http://www.loveisrespect.org/">http://www.loveisrespect.org/</a>
+            <a href="http://www.loveisrespect.org/" target="_blank">http://www.loveisrespect.org/</a>
           </div>
         </div>
       </Container>
