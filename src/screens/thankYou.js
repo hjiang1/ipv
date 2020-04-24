@@ -4,8 +4,8 @@ import styled from "styled-components"
 import HideRender from "../components/HideRender"
 
 const Container = styled.div`
-  .thank-you {
-    font-size: 24px;
+  .thank-you-title {
+    font-size: 1.5rem;
     line-height: 1.5;
     font-weight: bold;
   }
@@ -38,7 +38,7 @@ function ThankYou(props) {
   return (
     <HideRender hide={showOverlay}>
       <Container>
-       <p className="thank-you">Thank you for completing the IPV questionnaire.</p>
+       <p className="thank-you-title">Thank you for completing the IPV questionnaire.</p>
         { props.participate === 'Yes' && <p> A researcher will be in touch with you soon.</p>
         }
         <p className="close-message">You may now close this window. This page will automatically hide itself after 5 minutes of inactivity to protect your privacy.</p>

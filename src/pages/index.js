@@ -42,9 +42,9 @@ const Container = styled.div`
       border: 1px solid white;
       position: fixed;
       right: 4vw;
-      top: 1rem;
-      font-size: 40px;
-      height: 60px;
+      top: calc((5.5rem - 3.25rem)/2);
+      font-size: 2.25rem;
+      height: 3.25rem;
       background-color: maroon;
       color: white;
 

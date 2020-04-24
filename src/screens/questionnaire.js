@@ -6,6 +6,12 @@ import RadioQuestion from "../components/RadioQuestion"
 import HideRender from "../components/HideRender"
 
 const Container = styled.div`
+  .questionnaire-title {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+
   .questionnaire-form {
     margin: 0;
   }
@@ -113,6 +119,7 @@ function Questionnaire(props) {
   return (
     <HideRender hide={showOverlay}>
       <Container>
+      <p className="questionnaire-title">IPV Questionnaire</p>
         <form className="questionnaire-form" onSubmit={onSubmit}>
           {validate && !isCompleted && <p className="validate-message">Please correct the items highlighted in red.</p>}
           <BinaryQuestion number={1} prompt="Are you between the ages of 18 and 45?" id="age" value={age} setValue={setAge} validate={validate} />
