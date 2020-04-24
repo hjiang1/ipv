@@ -44,19 +44,25 @@ const Container = styled.div`
     margin: 0.2rem 2.5rem;
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 1px solid darkgray;
     width: 10rem;
     transition-property: color, background-color, border;
     transition-duration: 0.2s;
     transition-timing-function: ease;
 
-    :hover,
+    :hover {
+      border-color: maroon;
+      color: maroon;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     &.selected
     {
       background-color: maroon;
       border-color: maroon;
       color: white;
-      cursor: pointer;
+      font-weight: bold;
     }
 
     &.error {
