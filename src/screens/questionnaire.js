@@ -130,7 +130,7 @@ function Questionnaire(props) {
         <form className="questionnaire-form" onSubmit={onSubmit}>
           {validate && !isCompleted && <p className="validate-message">Please correct the items highlighted in red.</p>}
           <BinaryQuestion number={1} prompt="Are you between the ages of 18 and 45?" id="age" value={age} setValue={setAge} validate={validate} />
-          <RadioQuestion number={2} prompt="What is your biological sex?" id="sex" value={sex} setValue={setSex} options={['Male', 'Female', 'Other']} validate={validate} />
+          <RadioQuestion number={2} prompt="What is your biological sex?" id="sex" value={sex} setValue={setSex} options={['Male', 'Female']} validate={validate} />
           <BinaryQuestion number={3} prompt="Do you have a medical diagnosis of any neurological disorder (epilepsy, Parkinson’s Disease, brain tumor, etc.)?" id="diag" value={diagnosis} setValue={setDiagnosis} validate={validate} />
           <BinaryQuestion number={4} prompt="Have you used steroids or barbiturates?" id="ste" value={steroids} setValue={setSteroids} validate={validate} />
           <BinaryQuestion number={5} prompt="Have you used methamphetamines?" id="met" value={methamphetamine} setValue={setMethanphetamine} validate={validate} />

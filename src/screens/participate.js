@@ -27,7 +27,7 @@ const Container = styled.div`
     }
 
     .email-input {
-      border: 1px solid gray;
+      border: 1px solid darkgray;
       border-radius: 5px;
       width: 25rem;
       max-width: 80vw;
