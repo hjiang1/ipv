@@ -7,8 +7,12 @@ import Img from "gatsby-image"
 const Container = styled.div`
   .message{
     font-size: 50px;
-    line-height: 50px;
+    line-height: 1.2;
     color: maroon;
+  }
+
+  .pizza-image {
+    margin-bottom: 2rem;
   }
 `
 
@@ -30,7 +34,7 @@ function Overlay(props) {
   return (
     <Container>
       <p className="message">NOTHING TO SEE HERE, MOVE ALONG</p>
-      <Img fluid={pizzaImage.placeholderImage.childImageSharp.fluid} />
+      <Img className="pizza-image" fluid={pizzaImage.placeholderImage.childImageSharp.fluid} />
       <button className="button" onClick={() => setShowOverlay(false)}>Return to Questionnaire</button>
     </Container>
   )

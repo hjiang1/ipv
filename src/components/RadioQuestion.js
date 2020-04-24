@@ -5,10 +5,7 @@ import classNames from "classnames"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-
-  label:last-child {
-    margin-bottom: 2rem;
-  }
+  margin-bottom: 2rem;
 
   .prompt-container {
     display: flex;
@@ -46,13 +43,18 @@ const Container = styled.div`
     margin: 0.2rem 2.5rem;
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid gray;
     width: 10rem;
+
+    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
+    transition: border 0.2s ease;
 
     :hover,
     &.selected
     {
       background-color: maroon;
+      border-color: maroon;
       color: white;
       cursor: pointer;
     }
