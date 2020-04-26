@@ -17,9 +17,14 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
 
-    .button {
+    .actions {
       width: fit-content;
       align-self: flex-end;
+
+      .back-button {
+        margin-right: 0.5rem;
+        background-color: white;
+      }
     }
   }
 `
@@ -132,6 +137,10 @@ function Questionnaire(props) {
     } else {
       window.scrollTo(0, 0)
     }
+  }
+
+  const onBack = () => {
+    setScreen("landing")
   }
 
   return (
@@ -252,7 +261,20 @@ function Questionnaire(props) {
             />
           )}
           <hr />
-          <input className="button" type="submit" value="Submit" />
+          <div className="actions">
+            <button
+              className="button back-button"
+              value="Back"
+              onClick={onBack}
+            >
+              Back
+            </button>
+            <input
+              className="button submit-button"
+              type="submit"
+              value="Submit"
+            />
+          </div>
         </form>
       </Container>
     </HideRender>

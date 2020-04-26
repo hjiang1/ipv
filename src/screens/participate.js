@@ -49,9 +49,14 @@ const Container = styled.div`
       width: 100%;
     }
 
-    .button {
+    .actions {
       width: fit-content;
       align-self: flex-end;
+
+      .back-button {
+        margin-right: 0.5rem;
+        background-color: white;
+      }
     }
   }
 `
@@ -60,7 +65,7 @@ function Participate(props) {
   const [email, setEmail] = useState("")
   const [isCompleted, setIsCompleted] = useState(false)
 
-  const { showOverlay, participate, setParticipate } = props
+  const { showOverlay, participate, setParticipate, setScreen } = props
   const [validate, setValidate] = useState(false)
 
   useEffect(() => {
@@ -81,10 +86,14 @@ function Participate(props) {
       })
 
       // Send consent confirmation
-      props.setScreen("thankYou")
+      setScreen("thankYou")
     } else if (!validate) {
       setValidate(true)
     }
+  }
+
+  const onBack = () => {
+    setScreen("questionnaire")
   }
 
   return (
@@ -164,11 +173,20 @@ function Participate(props) {
             </Fragment>
           )}
           <hr className="form-divider" />
-          <input
-            className={classNames("button", { disabled: !isCompleted })}
-            type="submit"
-            value="Finish"
-          />
+          <div className="actions">
+            <button
+              className="button back-button"
+              value="Back"
+              onClick={onBack}
+            >
+              Back
+            </button>
+            <input
+              className={classNames("button", { disabled: !isCompleted })}
+              type="submit"
+              value="Finish"
+            />
+          </div>
         </form>
       </Container>
     </HideRender>
