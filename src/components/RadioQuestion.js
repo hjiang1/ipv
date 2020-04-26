@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import styled from "styled-components"
 import classNames from "classnames"
 
@@ -50,7 +50,7 @@ const Container = styled.div`
     transition-duration: 0.2s;
     transition-timing-function: ease;
 
-    @media (hover: hover) { 
+    @media (hover: hover) {
       :hover {
         border-color: maroon;
         color: maroon;
@@ -59,8 +59,7 @@ const Container = styled.div`
       }
     }
 
-    &.selected
-    {
+    &.selected {
       background-color: maroon;
       border-color: maroon;
       color: white;
@@ -70,12 +69,12 @@ const Container = styled.div`
     &.error {
       border-color: red;
     }
-}
+  }
 `
 
 function BinaryQuestion(props) {
   const [isInvalid, setIsInvalid] = useState(false)
-  const {prompt, id, number, value, setValue, options, validate} = props
+  const { prompt, id, number, value, setValue, options, validate } = props
 
   useEffect(() => {
     if (validate) {
@@ -86,7 +85,7 @@ function BinaryQuestion(props) {
       }
     }
   }, [validate, value])
-  
+
   return (
     <Container>
       <div className="prompt-container">
@@ -94,10 +93,28 @@ function BinaryQuestion(props) {
         <p className="prompt">{prompt}</p>
       </div>
       {isInvalid && <p className="validation">Please select an option.</p>}
-      {options.map((option, i) => <Fragment key={i}>
-        <input className="radio" type="radio" name={`q-${id}`} id={`q-${id}-${option}`} checked={value === option} onChange={() => setValue(option)} />
-        <label className={classNames('label', {selected: value === option, error: isInvalid})} onTouchStart={() => setValue(option)} htmlFor={`q-${id}-${option}`}>{option}</label>
-      </Fragment>)}
+      {options.map((option, i) => (
+        <Fragment key={i}>
+          <input
+            className="radio"
+            type="radio"
+            name={`q-${id}`}
+            id={`q-${id}-${option}`}
+            checked={value === option}
+            onChange={() => setValue(option)}
+          />
+          <label
+            className={classNames("label", {
+              selected: value === option,
+              error: isInvalid,
+            })}
+            onTouchStart={() => setValue(option)}
+            htmlFor={`q-${id}-${option}`}
+          >
+            {option}
+          </label>
+        </Fragment>
+      ))}
     </Container>
   )
 }

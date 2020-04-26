@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 5px;
-  
+
   @media only screen and (max-width: 600px) {
     padding: 1rem;
   }
@@ -15,7 +15,7 @@ const Container = styled.div`
 `
 
 const HideRender = props => {
-  const {hide, children} = props
+  const { hide, children } = props
 
   return hide ? null : <Container>{children}</Container>
 }

@@ -6,14 +6,14 @@ import ThankYou from "./thankYou"
 import Overlay from "./overlay"
 
 function Screen(props) {
-  const {currentScreen} = props
+  const { currentScreen } = props
 
-  switch(currentScreen) {
+  switch (currentScreen) {
     case "landing":
-      return <LandingScreen {...props} /> 
+      return <LandingScreen {...props} />
 
     case "questionnaire":
-      return <Questionnaire {...props} /> 
+      return <Questionnaire {...props} />
 
     case "participate":
       return <Participate {...props} />

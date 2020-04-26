@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  .message{
+  .message {
     font-size: 2.5rem;
     line-height: 1.2;
     color: maroon;
@@ -25,8 +25,8 @@ const Container = styled.div`
 `
 
 function Overlay(props) {
-  const {setShowOverlay} = props
-  
+  const { setShowOverlay } = props
+
   const pizzaImage = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "pizza-chair.png" }) {
@@ -42,8 +42,13 @@ function Overlay(props) {
   return (
     <Container>
       <p className="message">DISGUISED PAGE WILL GO HERE</p>
-      <Img className="pizza-image" fluid={pizzaImage.placeholderImage.childImageSharp.fluid} />
-      <button className="button" onClick={() => setShowOverlay(false)}>Return to Questionnaire</button>
+      <Img
+        className="pizza-image"
+        fluid={pizzaImage.placeholderImage.childImageSharp.fluid}
+      />
+      <button className="button" onClick={() => setShowOverlay(false)}>
+        Return to Questionnaire
+      </button>
     </Container>
   )
 }

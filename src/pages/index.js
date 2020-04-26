@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes } from "react-icons/fa"
 
 import Header from "../components/header"
 import Screen from "../screens"
@@ -15,7 +15,7 @@ import "../components/layout.css"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  
+
   .content {
     margin: 0 auto;
     max-width: 960px;
@@ -39,14 +39,14 @@ const Container = styled.div`
     /* margin to make button-press easier on mobile, can remove once footer is added */
     margin-bottom: 2rem;
 
-    @media (hover: hover) { 
+    @media (hover: hover) {
       :hover {
         color: maroon;
         border: 1px solid maroon;
         cursor: pointer;
       }
     }
-    
+
     :focus {
       outline: 0;
     }
@@ -61,7 +61,7 @@ const Container = styled.div`
     border: 1px solid white;
     position: sticky;
     right: 4vw;
-    top: calc((5.5rem - 3.25rem)/2);
+    top: calc((5.5rem - 3.25rem) / 2);
     font-size: 2.25rem;
     height: 3.25rem;
     background-color: maroon;
@@ -72,7 +72,7 @@ const Container = styled.div`
     margin-bottom: -4.5rem;
     text-decoration: none;
 
-    @media (hover: hover) { 
+    @media (hover: hover) {
       :hover {
         background-color: white;
         border: 1px solid maroon;
@@ -93,11 +93,10 @@ const Container = styled.div`
       }
     }
   }
-
 `
 
 function IndexPage() {
-  const [currentScreen, setScreen] = useState('landing')
+  const [currentScreen, setScreen] = useState("landing")
   const [showOverlay, setShowOverlay] = useState(false)
   const [qualify, setQualify] = useState(false)
   const [participate, setParticipate] = useState()
@@ -121,12 +120,12 @@ function IndexPage() {
     }
   `)
 
-  const {title, altTitle} = data.site.siteMetadata
+  const { title, altTitle } = data.site.siteMetadata
 
   // Change title on switch tab and show overlay on tab back
   useEffect(() => {
-    document.addEventListener("visibilitychange", function() {
-      if (document.hidden){
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
         document.title = altTitle
       } else {
         // Changing tabs unmounts current tab so state has to be changed when user returns
@@ -141,11 +140,17 @@ function IndexPage() {
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <WIPBanner />
       <Container>
-        {!showOverlay && <button className="button hide-button" id="hide" onClick={() => setShowOverlay(true)}>
-          <FaTimes className="times-icon" />
-          <div className="hide-text">HIDE</div>
-        </button> }
-        <Header logo={showOverlay ? 'pizza' : 'bwh'} />
+        {!showOverlay && (
+          <button
+            className="button hide-button"
+            id="hide"
+            onClick={() => setShowOverlay(true)}
+          >
+            <FaTimes className="times-icon" />
+            <div className="hide-text">HIDE</div>
+          </button>
+        )}
+        <Header logo={showOverlay ? "pizza" : "bwh"} />
         <main className="content">
           {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
           <Screen

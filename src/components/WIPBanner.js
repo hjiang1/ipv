@@ -1,6 +1,6 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { FaTools, FaTimes } from 'react-icons/fa';
+import { FaTools, FaTimes } from "react-icons/fa"
 
 const Container = styled.div`
   background-color: yellow;
@@ -56,15 +56,29 @@ const WIPBanner = () => {
             <FaTools className="wrench-icon" size="2rem" />
             <div>
               <div>This site is currently a work in progress.</div>
-              <div>Please contact Sam Jiang at <a href="mailto:hjiang4@partners.org" target="_blank" rel="noopener noreferrer">hjiang4@partners.org</a> to provide feedback on the design of this site.</div>
+              <div>
+                Please contact Sam Jiang at{" "}
+                <a
+                  href="mailto:hjiang4@partners.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  hjiang4@partners.org
+                </a>{" "}
+                to provide feedback on the design of this site.
+              </div>
             </div>
           </div>
-          <FaTimes className="close-icon" size="2rem" onClick={() => setOpen(false)} />
+          <FaTimes
+            className="close-icon"
+            size="2rem"
+            onClick={() => setOpen(false)}
+          />
         </div>
       </Container>
     )
   } else {
-    return null;
+    return null
   }
 }
 

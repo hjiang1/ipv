@@ -22,11 +22,11 @@ const HeaderContainer = styled.header`
 `
 
 const getLogo = logo => {
-  switch(logo) {
-    case 'bwh':
+  switch (logo) {
+    case "bwh":
       return <img className="header-logo" src={bwhLogo} alt="BWH Logo" />
 
-    case 'pizza':
+    case "pizza":
     default:
       return <img className="header-logo" src={pizzaLogo} alt="Pizza Logo" />
   }
@@ -34,9 +34,7 @@ const getLogo = logo => {
 
 const Header = ({ logo }) => (
   <HeaderContainer>
-    <div className="header-banner">
-      {getLogo(logo)}
-    </div>
+    <div className="header-banner">{getLogo(logo)}</div>
   </HeaderContainer>
 )
 
