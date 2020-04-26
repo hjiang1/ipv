@@ -1,15 +1,7 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 
-import HideRender from "../components/HideRender"
-
 const Container = styled.div`
-  .thank-you-title {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-weight: bold;
-  }
-
   .resources {
     border: 1px solid lightgrey;
     border-radius: 5px;
@@ -47,15 +39,15 @@ const Container = styled.div`
 `
 
 function ThankYou(props) {
-  const { showOverlay } = props
+  const { participate } = props
 
   return (
-    <HideRender hide={showOverlay}>
+    <Fragment>
       <Container>
-        <p className="thank-you-title">
+        <p className="title thank-you-title">
           Thank you for completing the IPV questionnaire.
         </p>
-        {props.participate === "Yes" && (
+        {participate === "Yes" && (
           <p> A researcher will be in touch with you soon.</p>
         )}
         <p className="close-message">
@@ -132,7 +124,7 @@ function ThankYou(props) {
           </div>
         </div>
       </Container>
-    </HideRender>
+    </Fragment>
   )
 }
 

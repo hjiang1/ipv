@@ -3,21 +3,9 @@ import styled from "styled-components"
 import classNames from "classnames"
 
 import BinaryQuestion from "../components/BinaryQuestion"
-import HideRender from "../components/HideRender"
 
 const Container = styled.div`
-  .qualify-title {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-weight: bold;
-  }
-
   .consent-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0;
-
     .label {
       margin-left: 0;
     }
@@ -47,16 +35,6 @@ const Container = styled.div`
 
     .form-divider {
       width: 100%;
-    }
-
-    .actions {
-      width: fit-content;
-      align-self: flex-end;
-
-      .back-button {
-        margin-right: 0.5rem;
-        background-color: white;
-      }
     }
   }
 `
@@ -97,9 +75,9 @@ function Participate(props) {
   }
 
   return (
-    <HideRender hide={showOverlay}>
+    <Fragment>
       <Container>
-        <p className="qualify-title">
+        <p className="title qualify-title">
           You qualify to participate in the study based on your answers to the
           questionnaire.
         </p>
@@ -138,7 +116,7 @@ function Participate(props) {
           get your usual medical care.
         </p>
         <hr />
-        <form className="consent-form" onSubmit={onSubmit}>
+        <form className="form consent-form" onSubmit={onSubmit}>
           {validate && !isCompleted && (
             <p className="validate-message">
               Please correct the items highlighted in red.
@@ -189,7 +167,7 @@ function Participate(props) {
           </div>
         </form>
       </Container>
-    </HideRender>
+    </Fragment>
   )
 }
 
