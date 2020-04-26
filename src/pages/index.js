@@ -20,11 +20,6 @@ const Container = styled.div`
     margin: 0 auto;
     max-width: 960px;
     padding: 0 1.0875rem 1.45rem;
-
-    .validate-message {
-      color: red;
-      font-weight: bold;
-    }
   }
 
   .button {
@@ -36,8 +31,6 @@ const Container = styled.div`
     transition-property: color, background-color, border;
     transition-duration: 0.2s;
     transition-timing-function: ease;
-    /* margin to make button-press easier on mobile, can remove once footer is added */
-    margin-bottom: 2rem;
 
     @media (hover: hover) {
       :hover {
@@ -123,16 +116,16 @@ function IndexPage() {
   const { title, altTitle } = data.site.siteMetadata
 
   // Change title on switch tab and show overlay on tab back
-  // useEffect(() => {
-  //   document.addEventListener("visibilitychange", function () {
-  //     if (document.hidden) {
-  //       document.title = altTitle
-  //     } else {
-  //       // Changing tabs unmounts current tab so state has to be changed when user returns
-  //       setShowOverlay(true)
-  //     }
-  //   })
-  // })
+  useEffect(() => {
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        document.title = altTitle
+      } else {
+        // Changing tabs unmounts current tab so state has to be changed when user returns
+        setShowOverlay(true)
+      }
+    })
+  })
 
   return (
     <Fragment>

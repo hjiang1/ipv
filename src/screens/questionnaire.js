@@ -23,7 +23,7 @@ function Questionnaire(props) {
   const [participantQualifies, setParticipantQualifies] = useState(false)
   const [validate, setValidate] = useState(false)
 
-  const { showOverlay, setQualify, setScreen } = props
+  const { setQualify, setScreen } = props
 
   useEffect(() => {
     if (sex === "Female") {

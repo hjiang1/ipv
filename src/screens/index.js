@@ -30,6 +30,11 @@ const Container = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
+
+    .validate-message {
+      color: red;
+      font-weight: bold;
+    }
   }
 
   .title {
@@ -41,6 +46,11 @@ const Container = styled.div`
   .actions {
     width: fit-content;
     align-self: flex-end;
+
+    /* margin to make button-press easier on mobile */
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 2rem;
+    }
 
     .back-button {
       margin-right: 0.5rem;
