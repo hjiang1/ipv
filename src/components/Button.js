@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import classNames from "classnames"
 
 export const ButtonContainer = styled.button`
   border-radius: 5px;
@@ -22,12 +23,25 @@ export const ButtonContainer = styled.button`
   :focus {
     outline: 0;
   }
+
+  &.secondary {
+    background-color: white;
+    border-color: white;
+  }
 `
 
-const Button = ({ children, className, onClick }) => (
-  <ButtonContainer className={className} onClick={onClick}>
-    {children}
-  </ButtonContainer>
-)
+const Button = props => {
+  const { children, className, onClick, secondary } = props
+
+  return (
+    <ButtonContainer
+      {...props}
+      className={classNames("button", className, { secondary: secondary })}
+      onClick={onClick}
+    >
+      {children}
+    </ButtonContainer>
+  )
+}
 
 export default Button

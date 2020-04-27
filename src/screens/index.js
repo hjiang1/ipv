@@ -51,11 +51,6 @@ const Container = styled.div`
     @media only screen and (max-width: 600px) {
       margin-bottom: 2rem;
     }
-
-    .back-button {
-      margin-right: 0.5rem;
-      background-color: white;
-    }
   }
 `
 

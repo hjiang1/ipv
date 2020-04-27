@@ -153,19 +153,10 @@ function Participate(props) {
           )}
           <hr className="form-divider" />
           <div className="actions">
-            <Button
-              className="button back-button"
-              value="Back"
-              onClick={onBack}
-            >
+            <Button onClick={onBack} secondary>
               Back
             </Button>
-            <Button
-              className={classNames("button", { disabled: !isCompleted })}
-              type="submit"
-            >
-              Finish
-            </Button>
+            <Button type="submit">Finish</Button>
           </div>
         </form>
       </Container>

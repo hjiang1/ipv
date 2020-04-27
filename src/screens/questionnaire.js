@@ -236,12 +236,10 @@ function Questionnaire(props) {
         )}
         <hr className="rule" />
         <div className="actions">
-          <Button className="button back-button" value="Back" onClick={onBack}>
+          <Button onClick={onBack} secondary>
             Back
           </Button>
-          <Button className="button submit-button" type="submit">
-            Submit
-          </Button>
+          <Button type="submit">Submit</Button>
         </div>
       </form>
     </Fragment>
