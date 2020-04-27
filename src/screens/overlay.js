@@ -43,7 +43,7 @@ function Overlay(props) {
         fluid={pizzaImage.placeholderImage.childImageSharp.fluid}
       />
       <Button onClick={() => setShowOverlay(false)}>
-        Return to Questionnaire
+        Return to Order
       </Button>
     </Container>
   )
