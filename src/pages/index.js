@@ -4,7 +4,9 @@ import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
 import { FaTimes } from "react-icons/fa"
 
+import GlobalStyle from "../components/GlobalStyle"
 import Header from "../components/header"
+import HideButton from "../components/HideButton"
 import Screen from "../screens"
 import Overlay from "../screens/overlay"
 import SEO from "../components/seo"
@@ -20,71 +22,6 @@ const Container = styled.div`
     margin: 0 auto;
     max-width: 960px;
     padding: 0 1.0875rem 1.45rem;
-  }
-
-  .button {
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: lightgray;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    transition-property: color, background-color, border;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-
-    @media (hover: hover) {
-      :hover {
-        color: maroon;
-        border: 1px solid maroon;
-        cursor: pointer;
-      }
-    }
-
-    :focus {
-      outline: 0;
-    }
-  }
-
-  .hide-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    border-radius: 5px;
-    border: 1px solid white;
-    position: sticky;
-    right: 4vw;
-    top: calc((5.5rem - 3.25rem) / 2);
-    font-size: 2.25rem;
-    height: 3.25rem;
-    background-color: maroon;
-    color: white;
-    width: fit-content;
-    align-self: flex-end;
-    margin-top: 1.25rem;
-    margin-bottom: -4.5rem;
-    text-decoration: none;
-
-    @media (hover: hover) {
-      :hover {
-        background-color: white;
-        border: 1px solid maroon;
-        color: maroon;
-      }
-    }
-
-    .times-icon {
-      margin: -0.3rem;
-      @media only screen and (min-width: 601px) {
-        margin-right: 0.25rem;
-      }
-    }
-
-    .hide-text {
-      @media only screen and (max-width: 600px) {
-        display: none;
-      }
-    }
   }
 `
 
@@ -129,20 +66,12 @@ function IndexPage() {
 
   return (
     <Fragment>
+      <GlobalStyle />
       <SEO title={showOverlay ? altTitle : title} />
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <WIPBanner />
       <Container>
-        {!showOverlay && (
-          <button
-            className="button hide-button"
-            id="hide"
-            onClick={() => setShowOverlay(true)}
-          >
-            <FaTimes className="times-icon" />
-            <div className="hide-text">HIDE</div>
-          </button>
-        )}
+        {!showOverlay && <HideButton onClick={() => setShowOverlay(true)} />}
         <Header logo={showOverlay ? "pizza" : "bwh"} />
         <main className="content">
           {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import classNames from "classnames"
 
 import BinaryQuestion from "../components/BinaryQuestion"
+import Button from "../components/Button"
 
 const Container = styled.div`
   .consent-form {
@@ -152,18 +153,19 @@ function Participate(props) {
           )}
           <hr className="form-divider" />
           <div className="actions">
-            <button
+            <Button
               className="button back-button"
               value="Back"
               onClick={onBack}
             >
               Back
-            </button>
-            <input
+            </Button>
+            <Button
               className={classNames("button", { disabled: !isCompleted })}
               type="submit"
-              value="Finish"
-            />
+            >
+              Finish
+            </Button>
           </div>
         </form>
       </Container>

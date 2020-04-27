@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
+import Button from "../components/Button"
 
 const Container = styled.div`
   display: flex;
@@ -17,11 +18,11 @@ const Container = styled.div`
   .pizza-image {
     margin-bottom: 2rem;
   }
-
+  /* 
   .button {
     width: fit-content;
     align-self: center;
-  }
+  } */
 `
 
 function Overlay(props) {
@@ -46,9 +47,9 @@ function Overlay(props) {
         className="pizza-image"
         fluid={pizzaImage.placeholderImage.childImageSharp.fluid}
       />
-      <button className="button" onClick={() => setShowOverlay(false)}>
+      <Button onClick={() => setShowOverlay(false)}>
         Return to Questionnaire
-      </button>
+      </Button>
     </Container>
   )
 }

@@ -1,5 +1,7 @@
 import React, { Fragment } from "react"
 
+import Button from "../components/Button"
+
 function LandingScreen(props) {
   const { setScreen } = props
 
@@ -27,9 +29,9 @@ function LandingScreen(props) {
         page will automatically hide itself after 5 minutes of inactivity.
       </p>
       <div className="actions">
-        <button className="button" onClick={() => setScreen("questionnaire")}>
+        <Button onClick={() => setScreen("questionnaire")}>
           Proceed to Questionnaire
-        </button>
+        </Button>
       </div>
     </Fragment>
   )

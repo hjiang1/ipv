@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react"
 
+import Button from "../components/Button"
 import BinaryQuestion from "../components/BinaryQuestion"
 import RadioQuestion from "../components/RadioQuestion"
 
@@ -235,14 +236,12 @@ function Questionnaire(props) {
         )}
         <hr className="rule" />
         <div className="actions">
-          <button className="button back-button" value="Back" onClick={onBack}>
+          <Button className="button back-button" value="Back" onClick={onBack}>
             Back
-          </button>
-          <input
-            className="button submit-button"
-            type="submit"
-            value="Submit"
-          />
+          </Button>
+          <Button className="button submit-button" type="submit">
+            Submit
+          </Button>
         </div>
       </form>
     </Fragment>
