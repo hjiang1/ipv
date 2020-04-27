@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
-import { FaTimes } from "react-icons/fa"
 
 import GlobalStyle from "../components/GlobalStyle"
 import Header from "../components/header"
@@ -30,6 +29,29 @@ function IndexPage() {
   const [showOverlay, setShowOverlay] = useState(false)
   const [qualify, setQualify] = useState(false)
   const [participate, setParticipate] = useState()
+  const [responses, setResponses] = useState({
+    age: undefined,
+    sex: undefined,
+    diagnosis: undefined,
+    steroids: undefined,
+    methamphetamine: undefined,
+    psych: undefined,
+    impairment: undefined,
+    bipolar: undefined,
+    left: undefined,
+    unsafe: undefined,
+    implants: undefined,
+    claustro: undefined,
+    pregnant: undefined,
+  })
+
+  const setResponse = (question, answer) => {
+    setResponses(
+      Object.assign({}, responses, {
+        [question]: answer,
+      })
+    )
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -76,6 +98,8 @@ function IndexPage() {
         <main className="content">
           {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
           <Screen
+            responses={responses}
+            setResponse={setResponse}
             currentScreen={currentScreen}
             setScreen={setScreen}
             qualify={qualify}

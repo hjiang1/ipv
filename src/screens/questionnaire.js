@@ -5,26 +5,28 @@ import BinaryQuestion from "../components/BinaryQuestion"
 import RadioQuestion from "../components/RadioQuestion"
 
 function Questionnaire(props) {
-  const [age, setAge] = useState()
-  const [sex, setSex] = useState()
-  const [diagnosis, setDiagnosis] = useState()
-  const [steroids, setSteroids] = useState()
-  const [methamphetamine, setMethanphetamine] = useState()
-  const [psych, setPsych] = useState()
-  const [impairment, setImpairment] = useState()
-  const [bipolar, setBipolar] = useState()
-  const [left, setLeft] = useState()
-  const [unsafe, setUnsafe] = useState()
-  const [implants, setImplants] = useState()
-  const [claustro, setClaustro] = useState()
-  const [pregnant, setPregnant] = useState()
+  const { responses, setResponse, setQualify, setScreen } = props
+  const {
+    age,
+    sex,
+    diagnosis,
+    steroids,
+    methamphetamine,
+    psych,
+    impairment,
+    bipolar,
+    left,
+    unsafe,
+    implants,
+    claustro,
+    pregnant,
+  } = responses
+  const setResponseID = question => value => setResponse(question, value)
 
   const [showPregnant, setShowPregnant] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
   const [participantQualifies, setParticipantQualifies] = useState(false)
   const [validate, setValidate] = useState(false)
-
-  const { setQualify, setScreen } = props
 
   useEffect(() => {
     if (sex === "Female") {
@@ -82,21 +84,7 @@ function Questionnaire(props) {
     event.preventDefault()
 
     if (isCompleted) {
-      console.log("Questionnaire Results: ", {
-        age,
-        sex,
-        diagnosis,
-        steroids,
-        methamphetamine,
-        psych,
-        impairment,
-        bipolar,
-        left,
-        unsafe,
-        implants,
-        claustro,
-        pregnant,
-      })
+      console.log("Questionnaire Results: ", responses)
 
       if (participantQualifies) {
         // Send survey info
@@ -132,7 +120,7 @@ function Questionnaire(props) {
           prompt="Are you between the ages of 18 and 45?"
           id="age"
           value={age}
-          setValue={setAge}
+          setValue={setResponseID("age")}
           validate={validate}
         />
         <RadioQuestion
@@ -140,7 +128,7 @@ function Questionnaire(props) {
           prompt="What is your biological sex?"
           id="sex"
           value={sex}
-          setValue={setSex}
+          setValue={setResponseID("sex")}
           options={["Male", "Female"]}
           validate={validate}
         />
@@ -149,7 +137,7 @@ function Questionnaire(props) {
           prompt="Do you have a medical diagnosis of any neurological disorder (epilepsy, Parkinson’s Disease, brain tumor, etc.)?"
           id="diag"
           value={diagnosis}
-          setValue={setDiagnosis}
+          setValue={setResponseID("diagnosis")}
           validate={validate}
         />
         <BinaryQuestion
@@ -157,7 +145,7 @@ function Questionnaire(props) {
           prompt="Have you used steroids or barbiturates?"
           id="ste"
           value={steroids}
-          setValue={setSteroids}
+          setValue={setResponseID("steroids")}
           validate={validate}
         />
         <BinaryQuestion
@@ -165,7 +153,7 @@ function Questionnaire(props) {
           prompt="Have you used methamphetamines?"
           id="met"
           value={methamphetamine}
-          setValue={setMethanphetamine}
+          setValue={setResponseID("methamphetamine")}
           validate={validate}
         />
         <BinaryQuestion
@@ -173,7 +161,7 @@ function Questionnaire(props) {
           prompt="Have you used psychoactive drugs?"
           id="psych"
           value={psych}
-          setValue={setPsych}
+          setValue={setResponseID("psych")}
           validate={validate}
         />
         <BinaryQuestion
@@ -181,7 +169,7 @@ function Questionnaire(props) {
           prompt="Do you have hearing, vision, or upper body motor impairments?"
           id="impair"
           value={impairment}
-          setValue={setImpairment}
+          setValue={setResponseID("impairment")}
           validate={validate}
         />
         <BinaryQuestion
@@ -189,7 +177,7 @@ function Questionnaire(props) {
           prompt="Have you been diagnosed with Bipolar Disorder or Schizophrenia?"
           id="bipolar"
           value={bipolar}
-          setValue={setBipolar}
+          setValue={setResponseID("bipolar")}
           validate={validate}
         />
         <BinaryQuestion
@@ -197,7 +185,7 @@ function Questionnaire(props) {
           prompt="Are you left-handed?"
           id="left"
           value={left}
-          setValue={setLeft}
+          setValue={setResponseID("left")}
           validate={validate}
         />
         <BinaryQuestion
@@ -205,7 +193,7 @@ function Questionnaire(props) {
           prompt="Are you currently in a intimate relationship (boyfriend, girlfriend, spouse) in which you don’t feel safe?"
           id="unsafe"
           value={unsafe}
-          setValue={setUnsafe}
+          setValue={setResponseID("unsafe")}
           validate={validate}
         />
         <BinaryQuestion
@@ -213,7 +201,7 @@ function Questionnaire(props) {
           prompt="Do you have any electrically, magnetically, or mechanically activated implants such as cardiac pacemakers (a device inserted in the chest to regulate the heartbeat) or any ferromagnetic implants (aneurysm clips, surgical clips, prostheses, metal fragment, etc.)?"
           id="implants"
           value={implants}
-          setValue={setImplants}
+          setValue={setResponseID("implants")}
           validate={validate}
         />
         <BinaryQuestion
@@ -221,7 +209,7 @@ function Questionnaire(props) {
           prompt="Are you Claustrophobic (afraid of being in small spaces)?"
           id="claustro"
           value={claustro}
-          setValue={setClaustro}
+          setValue={setResponseID("claustro")}
           validate={validate}
         />
         {showPregnant && (
@@ -230,13 +218,13 @@ function Questionnaire(props) {
             prompt="Are you currently pregnant?"
             id="pregnant"
             value={pregnant}
-            setValue={setPregnant}
+            setValue={setResponseID("pregnant")}
             validate={validate}
           />
         )}
         <hr className="rule" />
         <div className="actions">
-          <Button onClick={onBack} secondary>
+          <Button type="button" onClick={onBack} secondary>
             Back
           </Button>
           <Button type="submit">Submit</Button>

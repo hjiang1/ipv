@@ -44,7 +44,7 @@ function Participate(props) {
   const [email, setEmail] = useState("")
   const [isCompleted, setIsCompleted] = useState(false)
 
-  const { showOverlay, participate, setParticipate, setScreen } = props
+  const { participate, setParticipate, setScreen } = props
   const [validate, setValidate] = useState(false)
 
   useEffect(() => {
@@ -153,7 +153,7 @@ function Participate(props) {
           )}
           <hr className="form-divider" />
           <div className="actions">
-            <Button onClick={onBack} secondary>
+            <Button type="button" onClick={onBack} secondary>
               Back
             </Button>
             <Button type="submit">Finish</Button>
