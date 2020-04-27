@@ -108,7 +108,6 @@ function BinaryQuestion(props) {
               selected: value === option,
               error: isInvalid,
             })}
-            onTouchStart={() => setValue(option)}
             htmlFor={`q-${id}-${option}`}
           >
             {option}
