@@ -42,9 +42,7 @@ function Overlay(props) {
         className="pizza-image"
         fluid={pizzaImage.placeholderImage.childImageSharp.fluid}
       />
-      <Button onClick={() => setShowOverlay(false)}>
-        Return to Order
-      </Button>
+      <Button onClick={() => setShowOverlay(false)}>Return to Order</Button>
     </Container>
   )
 }
