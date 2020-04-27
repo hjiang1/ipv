@@ -13,8 +13,8 @@ export const ButtonContainer = styled.button`
 
   @media (hover: hover) {
     :hover {
-      color: maroon;
-      border: 1px solid maroon;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
       cursor: pointer;
     }
   }

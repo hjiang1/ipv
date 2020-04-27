@@ -16,7 +16,7 @@ const HideButtonContainer = styled(ButtonContainer)`
   top: calc((5.5rem - 3.25rem) / 2);
   font-size: 2.25rem;
   height: 3.25rem;
-  background-color: maroon;
+  background-color: var(--primary-color);
   color: white;
   width: fit-content;
   align-self: flex-end;
@@ -27,8 +27,8 @@ const HideButtonContainer = styled(ButtonContainer)`
   @media (hover: hover) {
     :hover {
       background-color: white;
-      border: 1px solid maroon;
-      color: maroon;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
     }
   }
 

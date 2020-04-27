@@ -12,17 +12,12 @@ const Container = styled.div`
   .message {
     font-size: 2.5rem;
     line-height: 1.2;
-    color: maroon;
+    color: var(--primary-color);
   }
 
   .pizza-image {
     margin-bottom: 2rem;
   }
-  /* 
-  .button {
-    width: fit-content;
-    align-self: center;
-  } */
 `
 
 function Overlay(props) {

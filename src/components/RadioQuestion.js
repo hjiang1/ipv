@@ -13,7 +13,7 @@ const Container = styled.div`
     align-items: flex-start;
 
     .question-number {
-      background-color: maroon;
+      background-color: var(--primary-color);
       width: 1.5rem;
       height: 1.5rem;
       display: flex;
@@ -52,16 +52,16 @@ const Container = styled.div`
 
     @media (hover: hover) {
       :hover {
-        border-color: maroon;
-        color: maroon;
+        border-color: var(--primary-color);
+        color: var(--primary-color);
         cursor: pointer;
         font-weight: bold;
       }
     }
 
     &.selected {
-      background-color: maroon;
-      border-color: maroon;
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
       color: white;
       font-weight: bold;
     }

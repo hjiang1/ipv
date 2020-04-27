@@ -6,7 +6,7 @@ import bwhLogo from "../images/bwh-logo.png"
 import pizzaLogo from "../images/pizza-logo.png"
 
 const HeaderContainer = styled.header`
-  background: maroon;
+  background: var(--primary-color);
   margin-bottom: 1.45rem;
 
   .header-banner {
