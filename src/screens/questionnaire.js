@@ -39,6 +39,8 @@ function Questionnaire(props) {
   useEffect(() => {
     if (age === "Yes" && implants === "No" && claustro === "No") {
       setParticipantQualifies(true)
+    } else {
+      setParticipantQualifies(false)
     }
   }, [age, implants, claustro])
 
