@@ -2,9 +2,10 @@ import React, { Fragment, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
-import { FaTimes } from 'react-icons/fa';
 
+import GlobalStyle from "../components/GlobalStyle"
 import Header from "../components/header"
+import HideButton from "../components/HideButton"
 import Screen from "../screens"
 import Overlay from "../screens/overlay"
 import SEO from "../components/seo"
@@ -15,92 +16,42 @@ import "../components/layout.css"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  
+
   .content {
     margin: 0 auto;
     max-width: 960px;
     padding: 0 1.0875rem 1.45rem;
-
-    .validate-message {
-      color: red;
-      font-weight: bold;
-    }
   }
-
-  .button {
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: lightgray;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    transition-property: color, background-color, border;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    /* margin to make button-press easier on mobile, can remove once footer is added */
-    margin-bottom: 2rem;
-
-    @media (hover: hover) { 
-      :hover {
-        color: maroon;
-        border: 1px solid maroon;
-        cursor: pointer;
-      }
-    }
-    
-    :focus {
-      outline: 0;
-    }
-  }
-
-  .hide-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    border-radius: 5px;
-    border: 1px solid white;
-    position: sticky;
-    right: 4vw;
-    top: calc((5.5rem - 3.25rem)/2);
-    font-size: 2.25rem;
-    height: 3.25rem;
-    background-color: maroon;
-    color: white;
-    width: fit-content;
-    align-self: flex-end;
-    margin-top: 1.25rem;
-    margin-bottom: -4.5rem;
-    text-decoration: none;
-
-    @media (hover: hover) { 
-      :hover {
-        background-color: white;
-        border: 1px solid maroon;
-        color: maroon;
-      }
-    }
-
-    .times-icon {
-      margin: -0.3rem;
-      @media only screen and (min-width: 601px) {
-        margin-right: 0.25rem;
-      }
-    }
-
-    .hide-text {
-      @media only screen and (max-width: 600px) {
-        display: none;
-      }
-    }
-  }
-
 `
 
 function IndexPage() {
-  const [currentScreen, setScreen] = useState('landing')
+  const [currentScreen, setScreen] = useState("landing")
   const [showOverlay, setShowOverlay] = useState(false)
   const [qualify, setQualify] = useState(false)
   const [participate, setParticipate] = useState()
+  const [responses, setResponses] = useState({
+    age: undefined,
+    sex: undefined,
+    diagnosis: undefined,
+    steroids: undefined,
+    methamphetamine: undefined,
+    psych: undefined,
+    impairment: undefined,
+    bipolar: undefined,
+    left: undefined,
+    unsafe: undefined,
+    implants: undefined,
+    claustro: undefined,
+    pregnant: undefined,
+  })
+
+  const setResponse = (question, answer) => {
+    setResponses(
+      Object.assign({}, responses, {
+        [question]: answer,
+      })
+    )
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -121,12 +72,12 @@ function IndexPage() {
     }
   `)
 
-  const {title, altTitle} = data.site.siteMetadata
+  const { title, altTitle } = data.site.siteMetadata
 
   // Change title on switch tab and show overlay on tab back
   useEffect(() => {
-    document.addEventListener("visibilitychange", function() {
-      if (document.hidden){
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
         document.title = altTitle
       } else {
         // Changing tabs unmounts current tab so state has to be changed when user returns
@@ -137,18 +88,18 @@ function IndexPage() {
 
   return (
     <Fragment>
+      <GlobalStyle />
       <SEO title={showOverlay ? altTitle : title} />
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <WIPBanner />
       <Container>
-        {!showOverlay && <button className="button hide-button" id="hide" onClick={() => setShowOverlay(true)}>
-          <FaTimes className="times-icon" />
-          <div className="hide-text">HIDE</div>
-        </button> }
-        <Header logo={showOverlay ? 'pizza' : 'bwh'} />
+        {!showOverlay && <HideButton onClick={() => setShowOverlay(true)} />}
+        <Header logo={showOverlay ? "pizza" : "bwh"} />
         <main className="content">
           {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
           <Screen
+            responses={responses}
+            setResponse={setResponse}
             currentScreen={currentScreen}
             setScreen={setScreen}
             qualify={qualify}

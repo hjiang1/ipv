@@ -8,119 +8,79 @@
       "id": "question-age",
       "inputType": "radio",
       "question": "Are you between ages 18 to 45?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-age",
       "inputType": "select",
       "question": "What is your biological sex?",
-      "options": [
-        "Male",
-        "Female",
-        "Other"
-      ]
+      "options": ["Male", "Female", "Other"]
     },
     {
       "id": "question-diagnosis",
       "inputType": "radio",
       "question": "Do you have a medical diagnosis of any neurological disorder (epilepsy, Parkinson’s Disease, brain tumor, etc)?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": 3,
       "inputType": "question-steroids",
       "question": "Have you used steroids or barbiturates?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-meth",
       "inputType": "radio",
       "question": "Have you used methamphetamine?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-psych",
       "inputType": "radio",
       "question": "Have you used psychoactive drugs?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "quesiton-impairment",
       "inputType": "radio",
       "question": "Do you have hearing, vision, or upper body motor impairments?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-bipolar",
       "inputType": "radio",
       "question": "Have you been diagnosed with Bipolar Disorder or Schizophrenia?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-left",
       "inputType": "radio",
       "question": "Are you left-handed?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-unsafe",
       "inputType": "radio",
       "question": "Are you currently in a intimate relationship (boyfriend, girlfriend, spouse) in which you don’t feel safe?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-implants",
       "inputType": "radio",
       "question": "Do you have any electrically, magnetically, or mechanically activated implants such as cardiac pacemakers (a device inserted in the chest to regulate the heartbeat) or any ferromagnetic implants (aneurysm clips, surgical clips, prostheses, metal fragment, etc)?  ",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-claustro",
       "inputType": "radio",
       "question": "Are you Claustrophobic (afraid of being in small spaces)?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     },
     {
       "id": "question-pregnant",
       "inputType": "radio",
       "question": "(If female), are you currently pregnant?",
-      "options": [
-        "Yes",
-        "No"
-      ],
+      "options": ["Yes", "No"],
       "conditions": [
         {
           "id": "question-sex",
@@ -152,10 +112,7 @@
       "id": "question-participate",
       "inputType": "radio",
       "question": "Would you like to participate in this study?",
-      "options": [
-        "Yes",
-        "No"
-      ]
+      "options": ["Yes", "No"]
     }
   ]
 }
