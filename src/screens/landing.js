@@ -28,6 +28,10 @@ function LandingScreen(props) {
         button at the top right of the screen. To protect your privacy, this
         page will automatically hide itself after 5 minutes of inactivity.
       </p>
+      <p>
+        Refreshing or closing this page will reset the questionnaire and delete
+        any locally stored data.
+      </p>
       <div className="actions">
         <Button onClick={() => setScreen("questionnaire")}>
           Proceed to Questionnaire
