@@ -3,7 +3,7 @@ import React, { Fragment } from "react"
 import Button from "../components/Button"
 
 function LandingScreen(props) {
-  const { setScreen } = props
+  const { updateCurrentScreen } = props
 
   return (
     <Fragment>
@@ -33,7 +33,7 @@ function LandingScreen(props) {
         any locally stored data.
       </p>
       <div className="actions">
-        <Button onClick={() => setScreen("questionnaire")}>
+        <Button onClick={() => updateCurrentScreen("questionnaire")}>
           Proceed to Questionnaire
         </Button>
       </div>

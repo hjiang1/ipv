@@ -1,5 +1,6 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect } from "react"
 import styled from "styled-components"
+import { connect } from "react-redux"
 
 const Container = styled.div`
   .resources {
@@ -39,7 +40,13 @@ const Container = styled.div`
 `
 
 function ThankYou(props) {
-  const { participate } = props
+  const { participate, complete, completed } = props
+
+  useEffect(() => {
+    if (!completed) {
+      complete()
+    }
+  }, [complete, completed])
 
   return (
     <Fragment>
@@ -128,4 +135,17 @@ function ThankYou(props) {
   )
 }
 
-export default ThankYou
+const mapStateToProps = ({
+  participateResponses: { participate },
+  completed,
+}) => {
+  return { participate, completed }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    complete: () => dispatch({ type: `COMPLETE` }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThankYou)

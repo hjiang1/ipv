@@ -21,7 +21,7 @@ const Container = styled.div`
 `
 
 function Overlay(props) {
-  const { setShowOverlay } = props
+  const { updateShowOverlay } = props
 
   const pizzaImage = useStaticQuery(graphql`
     query {
@@ -42,9 +42,7 @@ function Overlay(props) {
         className="pizza-image"
         fluid={pizzaImage.placeholderImage.childImageSharp.fluid}
       />
-      <Button onClick={() => setShowOverlay(false)}>
-        Return to Order
-      </Button>
+      <Button onClick={() => updateShowOverlay(false)}>Return to Order</Button>
     </Container>
   )
 }

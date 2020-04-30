@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
+import { connect } from "react-redux"
 
 import GlobalStyle from "../components/GlobalStyle"
 import Header from "../components/header"
@@ -23,42 +24,20 @@ const Container = styled.div`
     padding: 0 1.0875rem 1.45rem;
   }
 `
-
-function IndexPage() {
-  const [currentScreen, setScreen] = useState("landing")
-  const [showOverlay, setShowOverlay] = useState(false)
-  const [qualify, setQualify] = useState(false)
-  const [participate, setParticipate] = useState()
-  const [responses, setResponses] = useState({
-    age: undefined,
-    sex: undefined,
-    diagnosis: undefined,
-    steroids: undefined,
-    methamphetamine: undefined,
-    psych: undefined,
-    impairment: undefined,
-    bipolar: undefined,
-    left: undefined,
-    unsafe: undefined,
-    implants: undefined,
-    claustro: undefined,
-    pregnant: undefined,
-  })
-
-  const setResponse = (question, answer) => {
-    setResponses(
-      Object.assign({}, responses, {
-        [question]: answer,
-      })
-    )
-  }
+function IndexPage(props) {
+  const {
+    currentScreen,
+    updateCurrentScreen,
+    showOverlay,
+    updateShowOverlay,
+  } = props
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [currentScreen])
 
   const onIdle = () => {
-    setShowOverlay(true)
+    updateShowOverlay(true)
   }
 
   const data = useStaticQuery(graphql`
@@ -81,7 +60,7 @@ function IndexPage() {
         document.title = altTitle
       } else {
         // Changing tabs unmounts current tab so state has to be changed when user returns
-        setShowOverlay(true)
+        updateShowOverlay(true)
       }
     })
   })
@@ -93,21 +72,13 @@ function IndexPage() {
       <IdleTimer timeout={5 * 60 * 1000} onIdle={onIdle} />
       <WIPBanner />
       <Container>
-        {!showOverlay && <HideButton onClick={() => setShowOverlay(true)} />}
+        {!showOverlay && <HideButton onClick={() => updateShowOverlay(true)} />}
         <Header logo={showOverlay ? "pizza" : "bwh"} />
         <main className="content">
-          {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
+          {showOverlay && <Overlay updateShowOverlay={updateShowOverlay} />}
           <Screen
-            responses={responses}
-            setResponse={setResponse}
             currentScreen={currentScreen}
-            setScreen={setScreen}
-            qualify={qualify}
-            setQualify={setQualify}
-            participate={participate}
-            setParticipate={setParticipate}
-            showOverlay={showOverlay}
-            setShowOverlay={setShowOverlay}
+            updateCurrentScreen={updateCurrentScreen}
           />
         </main>
         <footer></footer>
@@ -116,4 +87,17 @@ function IndexPage() {
   )
 }
 
-export default IndexPage
+const mapStateToProps = ({ currentScreen, showOverlay }) => {
+  return { currentScreen, showOverlay }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateShowOverlay: value =>
+      dispatch({ type: `UPDATE_SHOW_OVERLAY`, value }),
+    updateCurrentScreen: value =>
+      dispatch({ type: `UPDATE_CURRENT_SCREEN`, value }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IndexPage)
