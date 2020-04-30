@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { connect } from "react-redux"
 
 import LandingScreen from "./landing"
 import Questionnaire from "./questionnaire"
@@ -84,4 +85,8 @@ function Screen(props) {
   )
 }
 
-export default Screen
+const mapStateToProps = ({ showOverlay }) => {
+  return { showOverlay }
+}
+
+export default connect(mapStateToProps)(Screen)

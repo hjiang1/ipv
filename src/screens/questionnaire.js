@@ -1,11 +1,18 @@
 import React, { Fragment, useEffect, useState } from "react"
+import { connect } from "react-redux"
 
 import Button from "../components/Button"
 import BinaryQuestion from "../components/BinaryQuestion"
 import RadioQuestion from "../components/RadioQuestion"
 
 function Questionnaire(props) {
-  const { responses, setResponse, setQualify, setScreen } = props
+  const {
+    qualify,
+    updateQualify,
+    updateCurrentScreen,
+    updateQuestionnaireResponse,
+    questionnaireResponses,
+  } = props
   const {
     age,
     sex,
@@ -20,13 +27,15 @@ function Questionnaire(props) {
     implants,
     claustro,
     pregnant,
-  } = responses
-  const setResponseID = question => value => setResponse(question, value)
+  } = questionnaireResponses
 
   const [showPregnant, setShowPregnant] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
-  const [participantQualifies, setParticipantQualifies] = useState(false)
   const [validate, setValidate] = useState(false)
+
+  const setResponseID = question => value => {
+    updateQuestionnaireResponse(question, value)
+  }
 
   useEffect(() => {
     if (sex === "Female") {
@@ -37,10 +46,12 @@ function Questionnaire(props) {
   }, [sex])
 
   useEffect(() => {
-    if (age === "Yes" && implants === "No" && claustro === "No") {
-      setParticipantQualifies(true)
-    } else {
-      setParticipantQualifies(false)
+    const doesQualify = age === "Yes" && implants === "No" && claustro === "No"
+
+    if (!qualify && doesQualify) {
+      updateQualify(true)
+    } else if (qualify && !doesQualify) {
+      updateQualify(false)
     }
   }, [age, implants, claustro])
 
@@ -86,15 +97,13 @@ function Questionnaire(props) {
     event.preventDefault()
 
     if (isCompleted) {
-      console.log("Questionnaire Results: ", responses)
+      console.log("Questionnaire Results: ", questionnaireResponses)
 
-      if (participantQualifies) {
+      if (qualify) {
         // Send survey info
-
-        setQualify(true)
-        setScreen("participate")
+        updateCurrentScreen("participate")
       } else {
-        setScreen("thankYou")
+        updateCurrentScreen("thankYou")
       }
     } else if (!validate) {
       setValidate(true)
@@ -105,7 +114,7 @@ function Questionnaire(props) {
   }
 
   const onBack = () => {
-    setScreen("landing")
+    updateCurrentScreen("landing")
   }
 
   return (
@@ -236,4 +245,18 @@ function Questionnaire(props) {
   )
 }
 
-export default Questionnaire
+const mapStateToProps = ({ questionnaireResponses, qualify }) => {
+  return { questionnaireResponses, qualify }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateQuestionnaireResponse: (id, value) =>
+      dispatch({ type: `UPDATE_QUESTIONNAIRE_RESPONSE`, id, value }),
+    updateQualify: value => dispatch({ type: `UPDATE_QUALIFY`, value }),
+    updateCurrentScreen: value =>
+      dispatch({ type: `UPDATE_CURRENT_SCREEN`, value }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Questionnaire)

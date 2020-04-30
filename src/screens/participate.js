@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react"
 import styled from "styled-components"
 import classNames from "classnames"
+import { connect } from "react-redux"
 
 import BinaryQuestion from "../components/BinaryQuestion"
 import Button from "../components/Button"
@@ -41,10 +42,14 @@ const Container = styled.div`
 `
 
 function Participate(props) {
-  const [email, setEmail] = useState("")
-  const [isCompleted, setIsCompleted] = useState(false)
+  const {
+    updateCurrentScreen,
+    participateResponses,
+    updateParticipateResponse,
+  } = props
+  const { participate, email } = participateResponses
 
-  const { participate, setParticipate, setScreen } = props
+  const [isCompleted, setIsCompleted] = useState(false)
   const [validate, setValidate] = useState(false)
 
   useEffect(() => {
@@ -65,14 +70,14 @@ function Participate(props) {
       })
 
       // Send consent confirmation
-      setScreen("thankYou")
+      updateCurrentScreen("thankYou")
     } else if (!validate) {
       setValidate(true)
     }
   }
 
   const onBack = () => {
-    setScreen("questionnaire")
+    updateCurrentScreen("questionnaire")
   }
 
   return (
@@ -127,7 +132,7 @@ function Participate(props) {
             prompt='Would you like to participte in this study? By choosing "Yes" you consent to the above conditions.'
             id="participate"
             value={participate}
-            setValue={setParticipate}
+            setValue={value => updateParticipateResponse("participate", value)}
             validate={validate}
           />
           {participate === "Yes" && (
@@ -147,7 +152,9 @@ function Participate(props) {
                 id="email"
                 name="email"
                 value={email}
-                onChange={event => setEmail(event.target.value)}
+                onChange={event =>
+                  updateParticipateResponse("email", event.target.value)
+                }
               />
             </Fragment>
           )}
@@ -164,4 +171,17 @@ function Participate(props) {
   )
 }
 
-export default Participate
+const mapStateToProps = ({ participateResponses }) => {
+  return { participateResponses }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateParticipateResponse: (id, value) =>
+      dispatch({ type: `UPDATE_PARTICIPATE_RESPONSE`, id, value }),
+    updateCurrentScreen: value =>
+      dispatch({ type: `UPDATE_CURRENT_SCREEN`, value }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Participate)
