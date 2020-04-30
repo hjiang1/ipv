@@ -53,7 +53,7 @@ function Questionnaire(props) {
     } else if (qualify && !doesQualify) {
       updateQualify(false)
     }
-  }, [age, implants, claustro])
+  }, [age, implants, claustro, qualify, updateQualify])
 
   useEffect(() => {
     if (
