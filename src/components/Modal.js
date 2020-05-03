@@ -37,6 +37,7 @@ const Container = styled.div`
     margin: 2rem;
     max-width: 900px;
     max-height: 90%;
+    overflow: hidden;
 
     @media only screen and (max-width: 1400px) {
       margin-top: 5.5rem;
