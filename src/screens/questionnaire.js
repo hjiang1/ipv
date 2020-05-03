@@ -114,7 +114,7 @@ function Questionnaire(props) {
   }
 
   const onBack = () => {
-    updateCurrentScreen("landing")
+    updateCurrentScreen("dates")
   }
 
   return (
@@ -245,7 +245,7 @@ function Questionnaire(props) {
   )
 }
 
-const mapStateToProps = ({ questionnaireResponses, qualify }) => {
+const mapStateToProps = ({ app: { questionnaireResponses, qualify } }) => {
   return { questionnaireResponses, qualify }
 }
 

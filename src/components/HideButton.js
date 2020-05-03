@@ -23,6 +23,7 @@ const HideButtonContainer = styled(ButtonContainer)`
   margin-top: 1.25rem;
   margin-bottom: -4.5rem;
   text-decoration: none;
+  z-index: 9999;
 
   @media (hover: hover) {
     :hover {

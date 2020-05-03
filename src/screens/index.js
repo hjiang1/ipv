@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 
 import LandingScreen from "./landing"
 import Questionnaire from "./questionnaire"
+import Dates from "./dates"
 import Participate from "./participate"
 import ThankYou from "./thankYou"
 import Overlay from "./overlay"
@@ -63,6 +64,9 @@ const getScreen = (screen, props) => {
     case "questionnaire":
       return <Questionnaire {...props} />
 
+    case "dates":
+      return <Dates {...props} />
+
     case "participate":
       return <Participate {...props} />
 
@@ -85,7 +89,7 @@ function Screen(props) {
   )
 }
 
-const mapStateToProps = ({ showOverlay }) => {
+const mapStateToProps = ({ app: { showOverlay } }) => {
   return { showOverlay }
 }
 

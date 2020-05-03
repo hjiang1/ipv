@@ -171,7 +171,7 @@ function Participate(props) {
   )
 }
 
-const mapStateToProps = ({ participateResponses }) => {
+const mapStateToProps = ({ app: { participateResponses } }) => {
   return { participateResponses }
 }
 
