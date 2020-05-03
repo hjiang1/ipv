@@ -60,8 +60,7 @@ const Modal = props => {
       document.body.style.width = "100%"
     } else {
       document.getElementById("___gatsby").style.removeProperty("margin-top")
-      document.body.style.removeProperty("overflow-y")
-      document.body.style.removeProperty("height")
+      document.body.style.removeProperty("overflow")
       document.body.style.removeProperty("position")
       document.body.style.removeProperty("width")
 
@@ -70,8 +69,7 @@ const Modal = props => {
 
     return () => {
       document.getElementById("___gatsby").style.removeProperty("margin-top")
-      document.body.style.removeProperty("overflow-y")
-      document.body.style.removeProperty("height")
+      document.body.style.removeProperty("overflow")
       document.body.style.removeProperty("position")
       document.body.style.removeProperty("width")
     }
