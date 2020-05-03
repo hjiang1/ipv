@@ -33,7 +33,8 @@ function LandingScreen(props) {
         any locally stored data.
       </p>
       <div className="actions">
-        <Button onClick={() => updateCurrentScreen("questionnaire")}>
+        {/* <Button onClick={() => updateCurrentScreen("questionnaire")}> */}
+        <Button onClick={() => updateCurrentScreen("dates")}>
           Proceed to Questionnaire
         </Button>
       </div>

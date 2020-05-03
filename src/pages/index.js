@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react"
+import React, { Fragment, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import IdleTimer from "react-idle-timer"
@@ -54,16 +54,16 @@ function IndexPage(props) {
   const { title, altTitle } = data.site.siteMetadata
 
   // Change title on switch tab and show overlay on tab back
-  useEffect(() => {
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) {
-        document.title = altTitle
-      } else {
-        // Changing tabs unmounts current tab so state has to be changed when user returns
-        updateShowOverlay(true)
-      }
-    })
-  })
+  // useEffect(() => {
+  //   document.addEventListener("visibilitychange", function () {
+  //     if (document.hidden) {
+  //       document.title = altTitle
+  //     } else {
+  //       // Changing tabs unmounts current tab so state has to be changed when user returns
+  //       updateShowOverlay(true)
+  //     }
+  //   })
+  // })
 
   return (
     <Fragment>
@@ -87,7 +87,7 @@ function IndexPage(props) {
   )
 }
 
-const mapStateToProps = ({ currentScreen, showOverlay }) => {
+const mapStateToProps = ({ app: { currentScreen, showOverlay } }) => {
   return { currentScreen, showOverlay }
 }
 

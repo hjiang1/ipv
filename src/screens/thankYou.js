@@ -136,8 +136,10 @@ function ThankYou(props) {
 }
 
 const mapStateToProps = ({
-  participateResponses: { participate },
-  completed,
+  app: {
+    participateResponses: { participate },
+    completed,
+  },
 }) => {
   return { participate, completed }
 }
