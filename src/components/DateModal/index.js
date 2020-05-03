@@ -24,9 +24,13 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
     height: 4rem;
     background-color: var(--primary-color);
+
+    padding: 1rem 2rem;
+    @media only screen and (max-width: 600px) {
+      padding: 1rem 1rem;
+    }
 
     .modal-title {
       font-size: 22px;
@@ -41,7 +45,7 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0;
       color: white;
 
       :focus {
@@ -90,6 +94,7 @@ const Container = styled.div`
         align-items: center;
         cursor: pointer;
         transition: transform 0.2s ease;
+        padding: 0;
 
         &.hidden {
           visibility: hidden;
