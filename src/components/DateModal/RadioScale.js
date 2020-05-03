@@ -3,8 +3,6 @@ import styled from "styled-components"
 
 const Container = styled.div`
   display: flex;
-  margin: 0 1rem;
-  width: fit-content;
 
   div:first-of-type {
     .label {
@@ -24,15 +22,20 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 
     .radio {
       display: none;
     }
 
     .label {
-      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4rem;
       border: 1px solid black;
       cursor: pointer;
+      width: 100%;
 
       :hover {
         box-shadow: 0 0 0 1px var(--primary-color) inset;

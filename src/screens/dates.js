@@ -67,8 +67,6 @@ function Dates(props) {
             added date in the calendar to edit an entry.
           </p>
         </div>
-        <hr className="rule" />
-
         <SeverityCalendar
           firstDate={new Date(2020, 0, 1)}
           lastDate={new Date()}

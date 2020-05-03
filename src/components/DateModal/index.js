@@ -25,8 +25,8 @@ const Container = styled.div`
     border-bottom: 1px solid black;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
-    min-height: min-content;
+    padding: 0.5rem 2rem;
+    height: 4rem;
     background-color: var(--primary-color);
 
     .modal-title {
@@ -54,7 +54,6 @@ const Container = styled.div`
   .modal-content {
     display: flex;
     flex-direction: column;
-    /* height: 50vh; */
     overflow-y: scroll;
 
     .modal-content-title-container {
@@ -67,9 +66,22 @@ const Container = styled.div`
       min-height: 3.5rem;
       border-bottom: 2px solid lightgray;
 
+      @media only screen and (max-width: 600px) {
+        padding: 0 1rem;
+      }
+
       .modal-content-title {
+        display: flex;
         font-size: 22px;
         font-weight: bold;
+
+        .title-day {
+          margin-right: 0.5rem;
+
+          @media only screen and (max-width: 600px) {
+            display: none;
+          }
+        }
       }
 
       .page-date-button {
@@ -99,6 +111,10 @@ const Container = styled.div`
 
       margin: 0 2rem;
 
+      @media only screen and (max-width: 600px) {
+        margin: 0 1rem;
+      }
+
       .prompt {
         margin: 2rem 0 1rem;
       }
@@ -114,17 +130,43 @@ const Container = styled.div`
       .delete-button {
         display: flex;
         align-items: center;
+        justify-content: center;
+
+        .button-text {
+          margin-left: 0.5rem;
+
+          @media only screen and (max-width: 600px) {
+            display: none;
+          }
+        }
 
         &.hidden {
           visibility: hidden;
+        }
+
+        @media only screen and (max-width: 400px) {
+          height: 3rem;
+          width: 3rem;
+          align-self: flex-end;
+        }
+      }
+
+      .save-cancel-container {
+        display: flex;
+
+        @media only screen and (max-width: 400px) {
+          flex-direction: column;
         }
       }
     }
 
     .rule {
       min-height: 1px;
-
       margin: 1rem 2rem;
+
+      @media only screen and (max-width: 600px) {
+        margin: 1rem 1rem;
+      }
     }
   }
 `
@@ -174,10 +216,9 @@ const DateModal = props => {
     changeModalDate(newDate)
   }
 
+  const displayDay = date ? `${dayNames[date.getDay()].long} ` : ""
   const displayDate = date
-    ? `${dayNames[date.getDay()].long} ${
-        date.getMonth() + 1
-      }/${date.getDate()}/${date.getFullYear()}`
+    ? `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
     : ""
 
   return (
@@ -201,7 +242,10 @@ const DateModal = props => {
             >
               <FaCaretLeft size="1.5rem" />
             </button>
-            <div className="modal-content-title">{displayDate}</div>
+            <div className="modal-content-title">
+              <div className="title-day">{displayDay}</div>
+              <div className="title-date">{displayDate}</div>
+            </div>
             <button
               className={classNames("page-date-button", {
                 hidden: date && isDateToday(date),
@@ -212,7 +256,7 @@ const DateModal = props => {
             </button>
           </div>
           <div className="content">
-            <p className="prompt">{`Please select which events you experienced on ${displayDate}.`}</p>
+            <p className="prompt">{`Please select which events you experienced on ${displayDay} ${displayDate}.`}</p>
             <CheckboxSelect
               name="experiences"
               options={[
