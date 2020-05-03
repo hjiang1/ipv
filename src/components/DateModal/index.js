@@ -22,7 +22,6 @@ const Container = styled.div`
 
   .modal-header {
     display: flex;
-    border-bottom: 1px solid black;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
