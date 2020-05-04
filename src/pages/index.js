@@ -65,6 +65,11 @@ function IndexPage(props) {
     })
   })
 
+  // Change title on close to disguise page in history
+  window.addEventListener('beforeunload', () => {
+    document.title = altTitle
+  })
+
   return (
     <Fragment>
       <GlobalStyle />
