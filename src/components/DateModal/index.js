@@ -266,25 +266,25 @@ const DateModal = props => {
               options={[
                 {
                   text:
-                    "Being punched, slapped, or kicked by an intimate partner",
+                    "Being punched, slapped, or kicked by an intimate partner.",
                   id: "punched",
                 },
                 {
-                  text: "Being shaken violently by an intimate partner",
+                  text: "Being shaken violently by an intimate partner.",
                   id: "shaken",
                 },
                 {
                   text:
-                    "Being choked or have had your breathing stopped by an intimate partner",
+                    "Being choked or have had your breathing stopped by an intimate partner.",
                   id: "choked",
                 },
                 {
                   text:
-                    "Being hit with an object, or thrown against an object by an intimate partner",
+                    "Being hit with an object, or thrown against an object by an intimate partner.",
                   id: "thrown",
                 },
                 {
-                  text: "Being verbally or emotionally assaulted",
+                  text: "Being verbally or emotionally assaulted by an intimate partner.",
                   id: "verbal",
                 },
               ]}

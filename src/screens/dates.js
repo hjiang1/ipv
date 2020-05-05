@@ -50,17 +50,17 @@ function Dates(props) {
         <div className="dates-prompt">
           <p>Since, January 2020, select the dates when you experienced:</p>
           <ol>
-            <li>Being punched, slapped, or kicked by an intimate partner</li>
-            <li>Being shaken violently by an intimate partner</li>
+            <li>Being punched, slapped, or kicked by an intimate partner.</li>
+            <li>Being shaken violently by an intimate partner.</li>
             <li>
               Being choked or have had your breathing stopped by an intimate
-              partner
+              partner.
             </li>
             <li>
               Being hit with an object, or thrown against an object by an
-              intimate partner
+              intimate partner.
             </li>
-            <li>Being verbally or emotionally assaulted</li>
+            <li>Being verbally or emotionally assaulted by an intimate partner.</li>
           </ol>
           <p>
             Select a date on the calendar below to add an entry. Click on an

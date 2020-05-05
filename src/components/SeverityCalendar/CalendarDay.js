@@ -45,9 +45,9 @@ const Container = styled.td`
     background: repeating-linear-gradient(
       45deg,
       rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.05) 5px,
-      rgba(0, 0, 0, 0.1) 5px,
-      rgba(0, 0, 0, 0.1) 10px
+      rgba(0, 0, 0, 0.05) 4.5px,
+      rgba(0, 0, 0, 0.1) 4.5px,
+      rgba(0, 0, 0, 0.1) 9px
     );
     cursor: default;
   }
