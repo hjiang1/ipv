@@ -60,7 +60,9 @@ function Dates(props) {
               Being hit with an object, or thrown against an object by an
               intimate partner.
             </li>
-            <li>Being verbally or emotionally assaulted by an intimate partner.</li>
+            <li>
+              Being verbally or emotionally assaulted by an intimate partner.
+            </li>
           </ol>
           <p>
             Select a date on the calendar below to add an entry. Click on an

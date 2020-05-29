@@ -284,7 +284,8 @@ const DateModal = props => {
                   id: "thrown",
                 },
                 {
-                  text: "Being verbally or emotionally assaulted by an intimate partner.",
+                  text:
+                    "Being verbally or emotionally assaulted by an intimate partner.",
                   id: "verbal",
                 },
               ]}
@@ -292,9 +293,17 @@ const DateModal = props => {
               onChange={updateExperiences}
             />
             <p className="prompt">
-              Please select on a scale of 0-7, with 0 being the least severe and
-              7 being the most severe.
+              Please rate the severity of the injury for this abusive episode.
             </p>
+            <ol start="0">
+              <li>No injury</li>
+              <li>Verbal/emotional trauma</li>
+              <li>Minor injury, no medical attention</li>
+              <li>Moderate injury, medical attention</li>
+              <li>Severe injury, needed to go to emergency</li>
+              <li>Severe injury, emergency and follow up</li>
+              <li>Severe life-threatening injury, hospitalized</li>
+            </ol>
             <RadioScale
               scale={[0, 7]}
               name="severity"
