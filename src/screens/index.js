@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 
 import LandingScreen from "./landing"
-import Questionnaire from "./questionnaire"
+import Covid1 from "./covid1"
 import Dates from "./dates"
 import Participate from "./participate"
 import ThankYou from "./thankYou"
@@ -61,8 +61,8 @@ const getScreen = (screen, props) => {
     case "landing":
       return <LandingScreen {...props} />
 
-    case "questionnaire":
-      return <Questionnaire {...props} />
+    case "covid1":
+      return <Covid1 {...props} />
 
     case "dates":
       return <Dates {...props} />

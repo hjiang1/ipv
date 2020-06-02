@@ -81,9 +81,7 @@ function Dates(props) {
         <Button secondary onClick={() => updateCurrentScreen("landing")}>
           Back
         </Button>
-        <Button onClick={() => updateCurrentScreen("questionnaire")}>
-          Next
-        </Button>
+        <Button onClick={() => updateCurrentScreen("covid1")}>Next</Button>
       </div>
     </Container>
   )
