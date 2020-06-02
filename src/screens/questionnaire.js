@@ -245,7 +245,10 @@ function Questionnaire(props) {
   )
 }
 
-const mapStateToProps = ({ app: { questionnaireResponses, qualify } }) => {
+const mapStateToProps = ({
+  questionnairePage: { questionnaireResponses },
+  app: { qualify },
+}) => {
   return { questionnaireResponses, qualify }
 }
 

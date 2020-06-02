@@ -70,7 +70,7 @@ function IndexPage(props) {
     window.addEventListener("beforeunload", () => {
       document.title = altTitle
     })
-  }, [])
+  }, [altTitle])
 
   return (
     <Fragment>

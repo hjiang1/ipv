@@ -2,10 +2,12 @@ import { createStore as reduxCreateStore, combineReducers } from "redux"
 
 import appReducer from "./appReducer"
 import datesReducer from "./datesReducer"
+import questionnaireReducer from "./questionnaireReducer"
 
 const reducer = combineReducers({
   app: appReducer,
   datesPage: datesReducer,
+  questionnairePage: questionnaireReducer,
 })
 
 const createStore = () =>
