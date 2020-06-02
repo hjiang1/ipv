@@ -34,7 +34,6 @@ const appReducer = (state = initialState, action) => {
     case `COMPLETE`:
       return Object.assign({}, state, {
         completed: true,
-        questionnaireResponses: undefined,
       })
     case `UPDATE_CURRENT_SCREEN`:
       return Object.assign({}, state, {

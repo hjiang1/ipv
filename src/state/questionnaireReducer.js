@@ -31,6 +31,11 @@ const datesReducer = (state = initialState, action) => {
         questionnaireResponses: newQuestionnaireResponses,
       })
 
+    case `COMPLETE`:
+      return {
+        questionnaireResponses: undefined,
+      }
+
     default:
       return state
   }
