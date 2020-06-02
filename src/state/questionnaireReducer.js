@@ -16,7 +16,7 @@ const initialState = {
   },
 }
 
-const datesReducer = (state = initialState, action) => {
+const questionnaireReducer = (state = initialState, action) => {
   switch (action.type) {
     case `UPDATE_QUESTIONNAIRE_RESPONSE`:
       const newQuestionnaireResponses = Object.assign(
@@ -41,4 +41,4 @@ const datesReducer = (state = initialState, action) => {
   }
 }
 
-export default datesReducer
+export default questionnaireReducer
